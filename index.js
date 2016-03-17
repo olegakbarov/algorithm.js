@@ -5,8 +5,24 @@ import {
   shuffle
 } from './arr-utils.js';
 
-let a = ['one', 'two', 'three', 'four', 'six', 'seven'];
+import {
+  // shallowCopy,
+  cloneObject
+} from './obj-utils.js';
 
-let res = shuffle(a);
+let obj = {
+  stuff: {
+    nested: {
+      deeper: {
+        more: {
+          here: '😳'
+        }
+      }
+    }
+  }
+};
 
-console.log(res);
+let clone = cloneObject(obj);
+obj.stuff = '💩';
+
+console.log(obj);
