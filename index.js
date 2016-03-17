@@ -3,12 +3,12 @@
 import {
   // shallowCopy,
   shuffle
-} from './arr-utils.js';
+} from './lib/arr-utils.js';
 
 import {
   // shallowCopy,
   cloneObject
-} from './obj-utils.js';
+} from './lib/obj-utils.js';
 
 let obj = {
   stuff: {
