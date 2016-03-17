@@ -21,3 +21,4 @@ for (let n of fibonacci) {
 
   console.log(n)
 }
+
