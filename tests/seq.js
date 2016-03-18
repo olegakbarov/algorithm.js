@@ -1,7 +1,7 @@
 import test from 'tape';
 import { Seq } from '../lib/Seq';
 
-test('seq methods should work correctly', assert => {
+test('Seq', assert => {
   let msg;
 
   let instance = new Seq(['one', 'two', 'three']);
