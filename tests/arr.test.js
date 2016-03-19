@@ -37,17 +37,20 @@ test('Merge', assert => {
   assert.end();
 });
 
-test('Merge sort performance', assert => {
-  let arr = [], i = 0, rounds = 10000000;
-  while (i < rounds) {
-    arr.push(Math.random() * 1000);
-    i++;
-  }
+/* Uncomment if you want perf stats of mergeSort */
 
-  let startedAt = Date.now();
-  mergeSort(arr);
-  let endedAt = Date.now();
-  let elapsedTime = endedAt - startedAt;
-  assert.comment(`Merge soft record for ${rounds} rounds: ${elapsedTime} ms`);
-  assert.end();
-});
+// test('Merge sort performance', assert => {
+//   let arr = [], i = 0, rounds = 10000000;
+//   while (i < rounds) {
+//     arr.push(Math.random() * 1000);
+//     i++;
+//   }
+
+//   let startedAt = Date.now();
+//   mergeSort(arr);
+//   let endedAt = Date.now();
+//   let elapsedTime = endedAt - startedAt;
+//   assert.comment(`Merge soft record for ${rounds} rounds: ${elapsedTime} ms`);
+//   assert.end();
+// });
+
