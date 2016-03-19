@@ -1,3 +1,5 @@
+/* eslint-disable max-statements */
+
 import test from 'tape';
 import { merge, mergeSort } from '../lib/arr/mergeSort.js';
 
@@ -10,7 +12,7 @@ test('mergeSort', assert => {
   msg = 'merge() works properly #1';
   assert.deepEqual(res, expected, msg);
 
-  a = [22, 33, 44,];
+  a = [22, 33, 44];
   b = [];
   res = merge(a,b);
   expected = [22,33,44];
@@ -18,7 +20,7 @@ test('mergeSort', assert => {
   assert.deepEqual(res, expected, msg);
 
   a = [];
-  b = [22, 33, 44,];
+  b = [22, 33, 44];
   res = merge(a,b);
   expected = [22,33,44];
   msg = 'merge() works properly #2';
@@ -50,7 +52,7 @@ test('Merge', assert => {
 //   mergeSort(arr);
 //   let endedAt = Date.now();
 //   let elapsedTime = endedAt - startedAt;
-//   assert.comment(`Merge soft record for ${rounds} rounds: ${elapsedTime} ms`);
+//   assert.comment(`Merge soft record for ${rounds} rounds: ${elapsedTime} ms`)
 //   assert.end();
 // });
 

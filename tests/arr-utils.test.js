@@ -2,12 +2,12 @@ import test from 'tape';
 import { createMatrix, shuffle } from '../lib/arr/utils.js';
 
 test('[utils] Shuffle', assert => {
-  let arr = [1,2,3,5,8,13,21]
+  let arr = [1,2,3,5,8,13,21];
   let res = shuffle(arr);
 
   let msg = 'no items left on initial indexes';
 
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     assert.notOk(res[i] !== arr[i], msg);
   }
   assert.end();

@@ -5,9 +5,9 @@ test('Seq', assert => {
   let msg;
 
   let instance = new Seq(['one', 'two', 'three']);
-  let first = instance.first()
-  let last = instance.last()
-  let nth = instance.nth(2)
+  let first = instance.first();
+  let last = instance.last();
+  let nth = instance.nth(2);
 
   msg = 'first() works properly';
   assert.deepEqual(first, 'one', msg);

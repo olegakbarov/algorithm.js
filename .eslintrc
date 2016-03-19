@@ -75,7 +75,6 @@ rules:
   no-self-compare: 2
   no-unneeded-ternary: 2
   no-unused-expressions: 2
-
   no-use-before-define:
     - 2
     - nofunc
@@ -105,7 +104,7 @@ rules:
 
   semi: 2
 
-  space-after-keywords: 2
+  keyword-spacing: 2
   space-before-blocks: 2
   space-before-function-paren:
     - 2
