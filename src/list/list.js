@@ -6,7 +6,7 @@ export class List {
   /**
    * creates instance of list
    * @param  {array} items - array of items to be place into the list
-   * @return {List}       [description]
+   * @return {List}
    */
   constructor(items) {
     this.data = items;
@@ -36,15 +36,15 @@ export class List {
   }
 
   /**
-   * @return {Number} returns index of added element
+   * @param {any} el - element to be inserted
+   * @param {number} ix - index to append element to
    */
-  add(el) {
-    this.data.push(el);
-    this._index = ++this._index;
-    return this._index;
+  insert(el, ix) {
+    this.data.splice(ix - 1, 1, el);
   }
 
   /**
+   * @param {any} el - finds and returns element if it exists in the list
    * @return {Number} returns index of provided element
    */
   find(el) {
@@ -53,11 +53,12 @@ export class List {
     if (ix > 0) {
       return this.data[ix];
     } else {
-      return 'No such element in list';
+      return false;
     }
   }
 
   /**
+   * @param {any} el - remove element if it exists in the list
    * @return {Number} returns index of removed element
    */
   remove(el) {
@@ -66,7 +67,7 @@ export class List {
     if (ix > 0) {
       this.data.splice(ix, 1);
     } else {
-      return 'No such element in list';
+      return false;
     }
   }
 }

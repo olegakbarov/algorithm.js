@@ -16,13 +16,12 @@ test('[list] Methods', assert => {
   let four = list.find(4);
   assert.equal(four, 4, msg);
 
-  msg = 'add() adds item';
-  list.add(6);
-  assert.equal(list.toString(), '1,2,3,4,5,6', msg);
+  msg = 'insert() adds item to specific index';
+  list.insert('beer', 3);
+  assert.equal(list.toString(), '1,2,beer,4,5', msg);
 
   msg = 'list index changes accordingly to remove()';
   list.remove(3);
-  assert.equal(list.toString(), '1,2,4,5,6', msg);
+  assert.equal(list.toString(), '1,2,beer,4,5', msg);
   assert.end();
 });
-

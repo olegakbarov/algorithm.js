@@ -3,23 +3,23 @@
 /**
  * In-place shuffles the array using Fisher–Yates algorithm
  * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
- * @param  {array} array — accepts array of numbers
+ * @param  {array} arr — accepts array of numbers
  * @return {array]}
  */
-export function shuffle(array) {
-  let m = array.length, t, i;
+export function shuffle(arr) {
+  let m = arr.length, t, i;
 
   while (m) {
     // random index between the unshuffled
     i = Math.floor(Math.random() * m--);
 
     // swap it with current element
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
+    t = arr[m];
+    arr[m] = arr[i];
+    arr[i] = t;
   }
 
-  return array;
+  return arr;
 }
 
 /**
