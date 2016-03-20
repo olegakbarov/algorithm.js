@@ -390,12 +390,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/list/list.js~list#add",
-    "class/src/list/list.js~List.html#instance-method-add",
-    "src/list/list.js~List#add",
-    "method"
-  ],
-  [
     "src/list/list.js~list#constructor",
     "class/src/list/list.js~List.html#instance-constructor-constructor",
     "src/list/list.js~List#constructor",
@@ -417,6 +411,12 @@ window.esdocSearchIndex = [
     "src/list/list.js~list#find",
     "class/src/list/list.js~List.html#instance-method-find",
     "src/list/list.js~List#find",
+    "method"
+  ],
+  [
+    "src/list/list.js~list#insert",
+    "class/src/list/list.js~List.html#instance-method-insert",
+    "src/list/list.js~List#insert",
     "method"
   ],
   [
