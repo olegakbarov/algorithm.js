@@ -1,10 +1,12 @@
 'use strict';
 
-/**
- * ES5 has Object.create(src)
- * ES6 has Object.assign({}, src)
- */
 export function cloneObject(obj) {
+  /*
+   * Deeply clones object.
+   * obj !== cloneObject(obj)
+   * @param  {Object}
+   * @return {Object}
+   */
   if (typeof obj !== 'object') throw Error('Not valid object');
 
   let res = {};

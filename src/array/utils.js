@@ -1,13 +1,11 @@
 'use strict';
 
-/* expects obeject */
 export function shallowCopy(a,b) {
   for (let i = 0; i < a.length; ++i) {
     b[i] = a[i];
   }
 }
 
-/* expects array */
 export function shuffle(array) {
   let m = array.length, t, i;
 
@@ -24,7 +22,6 @@ export function shuffle(array) {
   return array;
 }
 
-/* expects 3 integers */
 export function createMatrix(numrows, numcols, initial) {
   let res = [];
 
