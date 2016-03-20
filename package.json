@@ -19,6 +19,8 @@
     "test": "babel-tape-runner tests/**/*.js | faucet",
     "lint": "eslint .",
     "prepublish": "npm run test && npm run lint",
+    "docs": "esdoc -c esdoc.json",
+    "publish": "npm run docs && npm run deploy",
     "deploy": "gh-pages -d ./out/esdoc"
   },
   "repository": {
@@ -26,7 +28,10 @@
     "url": "git+ssh://git@github.com/olegakbarov/cs-in-js.git"
   },
   "keywords": [
-    "js"
+    "js",
+    "algorithms",
+    "data structures",
+    "sort"
   ],
   "author": "Oleg Akbarov",
   "license": "MIT",

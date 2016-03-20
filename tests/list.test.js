@@ -1,6 +1,6 @@
 /* eslint-disable max-statements */
 import test from 'tape';
-import { List } from '../lib/list/list.js';
+import { List } from '../src/list/list.js';
 
 test('[list] Methods', assert => {
   let list = new List([1,2,3,4,5]);

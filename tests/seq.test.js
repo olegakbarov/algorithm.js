@@ -1,5 +1,5 @@
 import test from 'tape';
-import { Seq } from '../lib/Seq';
+import { Seq } from '../src/Seq';
 
 test('Seq', assert => {
   let msg;
