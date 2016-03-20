@@ -397,45 +397,39 @@ window.esdocSearchIndex = [
   ],
   [
     "src/list/list.js~list#current",
-    "class/src/list/list.js~List.html#instance-method-current",
+    "class/src/list/list.js~List.html#instance-member-current",
     "src/list/list.js~List#current",
-    "method"
-  ],
-  [
-    "src/list/list.js~list#data",
-    "class/src/list/list.js~List.html#instance-member-data",
-    "src/list/list.js~List#data",
     "member"
   ],
   [
     "src/list/list.js~list#find",
-    "class/src/list/list.js~List.html#instance-method-find",
+    "class/src/list/list.js~List.html#instance-member-find",
     "src/list/list.js~List#find",
-    "method"
+    "member"
   ],
   [
     "src/list/list.js~list#insert",
-    "class/src/list/list.js~List.html#instance-method-insert",
+    "class/src/list/list.js~List.html#instance-member-insert",
     "src/list/list.js~List#insert",
-    "method"
+    "member"
   ],
   [
     "src/list/list.js~list#next",
-    "class/src/list/list.js~List.html#instance-method-next",
+    "class/src/list/list.js~List.html#instance-member-next",
     "src/list/list.js~List#next",
-    "method"
+    "member"
   ],
   [
     "src/list/list.js~list#remove",
-    "class/src/list/list.js~List.html#instance-method-remove",
+    "class/src/list/list.js~List.html#instance-member-remove",
     "src/list/list.js~List#remove",
-    "method"
+    "member"
   ],
   [
     "src/list/list.js~list#tostring",
-    "class/src/list/list.js~List.html#instance-method-toString",
+    "class/src/list/list.js~List.html#instance-member-toString",
     "src/list/list.js~List#toString",
-    "method"
+    "member"
   ],
   [
     "src/obj-utils.js",
@@ -457,13 +451,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-set-current",
+    "class/src/seq.js~Seq.html#instance-get-current",
     "src/seq.js~Seq#current",
     "member"
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-get-current",
+    "class/src/seq.js~Seq.html#instance-set-current",
     "src/seq.js~Seq#current",
     "member"
   ],

@@ -1,14 +1,12 @@
 {
-  "coverage": "91.3%",
-  "expectCount": 23,
+  "coverage": "95.45%",
+  "expectCount": 22,
   "actualCount": 21,
   "files": {
     "src/list/list.js": {
-      "expectCount": 9,
+      "expectCount": 8,
       "actualCount": 8,
-      "undocumentLines": [
-        12
-      ]
+      "undocumentLines": []
     },
     "src/seq.js": {
       "expectCount": 9,

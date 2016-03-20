@@ -210,7 +210,7 @@
     "access": null,
     "description": null,
     "lineNumber": 5,
-    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    this.data = items;\n    this._index = 0;\n  }\n\n  /**\n   * @return {String} returns stringified representation\n   * of the content of list\n   */\n  toString() {\n    return this.data.toString();\n  }\n\n  /**\n   * @return {Number} return index of current item\n   */\n  current() {\n    return this.data[this._index];\n  }\n\n  /**\n   * @return {Number}\n   */\n  next() {\n    return this.data[this._index++];\n  }\n\n  /**\n   * @param {any} el - element to be inserted\n   * @param {number} ix - index to append element to\n   */\n  insert(el, ix) {\n    this.data.splice(ix - 1, 1, el);\n  }\n\n  /**\n   * @param {any} el - finds and returns element if it exists in the list\n   * @return {Number} returns index of provided element\n   */\n  find(el) {\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      return this.data[ix];\n    } else {\n      return false;\n    }\n  }\n\n  /**\n   * @param {any} el - remove element if it exists in the list\n   * @return {Number} returns index of removed element\n   */\n  remove(el) {\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      this.data.splice(ix, 1);\n    } else {\n      return false;\n    }\n  }\n}"
+    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    /**\n     * @private store\n     * @type {array}\n     */\n    let store = items;\n    /**\n     * we store current element index in this variable\n     * @private index\n     * @type {number}\n     */\n    let index = 0;\n\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * @return {Number} return index of current item\n     */\n    this.current = () => {\n      return store[index];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.next = () => {\n      return store[index++];\n    };\n\n    /**\n     * @param {any} el - element to be inserted\n     * @param {number} ix - index to append element to\n     */\n    this.insert = (el, ix) => {\n      store.splice(ix - 1, 1, el);\n    };\n\n    /**\n     * @param {any} el - finds and returns element if it exists in the list\n     * @return {Number} returns index of provided element\n     */\n    this.find = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        return store[ix];\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * @param {any} el - remove element if it exists in the list\n     * @return {Number} returns index of removed element\n     */\n    this.remove = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        store.splice(ix, 1);\n      } else {\n        return false;\n      }\n    };\n  }\n}"
   },
   {
     "__docId__": 7,
@@ -266,13 +266,20 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "data",
+    "name": "toString",
     "memberof": "src/list/list.js~List",
-    "longname": "src/list/list.js~List#data",
+    "longname": "src/list/list.js~List#toString",
     "access": null,
-    "description": null,
-    "lineNumber": 12,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 28,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "returns stringified representation\nof the content of list"
+    },
     "type": {
       "types": [
         "*"
@@ -284,53 +291,12 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "_index",
-    "memberof": "src/list/list.js~List",
-    "longname": "src/list/list.js~List#_index",
-    "access": null,
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
-    "type": {
-      "types": [
-        "number"
-      ]
-    }
-  },
-  {
-    "__docId__": 11,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "toString",
-    "memberof": "src/list/list.js~List",
-    "longname": "src/list/list.js~List#toString",
-    "access": null,
-    "description": "",
-    "lineNumber": 20,
-    "params": [],
-    "return": {
-      "nullable": null,
-      "types": [
-        "String"
-      ],
-      "spread": false,
-      "description": "returns stringified representation\nof the content of list"
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 12,
-    "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "current",
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#current",
     "access": null,
     "description": "",
-    "lineNumber": 27,
-    "params": [],
+    "lineNumber": 35,
     "return": {
       "nullable": null,
       "types": [
@@ -339,11 +305,15 @@
       "spread": false,
       "description": "return index of current item"
     },
-    "generator": false
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
-    "__docId__": 13,
-    "kind": "method",
+    "__docId__": 11,
+    "kind": "member",
     "static": false,
     "variation": null,
     "name": "next",
@@ -351,8 +321,7 @@
     "longname": "src/list/list.js~List#next",
     "access": null,
     "description": "",
-    "lineNumber": 34,
-    "params": [],
+    "lineNumber": 42,
     "return": {
       "nullable": null,
       "types": [
@@ -361,11 +330,15 @@
       "spread": false,
       "description": ""
     },
-    "generator": false
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
-    "__docId__": 14,
-    "kind": "method",
+    "__docId__": 12,
+    "kind": "member",
     "static": false,
     "variation": null,
     "name": "insert",
@@ -373,7 +346,7 @@
     "longname": "src/list/list.js~List#insert",
     "access": null,
     "description": "",
-    "lineNumber": 42,
+    "lineNumber": 50,
     "params": [
       {
         "nullable": null,
@@ -396,11 +369,15 @@
         "description": "index to append element to"
       }
     ],
-    "generator": false
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
-    "__docId__": 15,
-    "kind": "method",
+    "__docId__": 13,
+    "kind": "member",
     "static": false,
     "variation": null,
     "name": "find",
@@ -408,7 +385,7 @@
     "longname": "src/list/list.js~List#find",
     "access": null,
     "description": "",
-    "lineNumber": 50,
+    "lineNumber": 58,
     "params": [
       {
         "nullable": null,
@@ -429,11 +406,15 @@
       "spread": false,
       "description": "returns index of provided element"
     },
-    "generator": false
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
-    "__docId__": 16,
-    "kind": "method",
+    "__docId__": 14,
+    "kind": "member",
     "static": false,
     "variation": null,
     "name": "remove",
@@ -441,7 +422,7 @@
     "longname": "src/list/list.js~List#remove",
     "access": null,
     "description": "",
-    "lineNumber": 64,
+    "lineNumber": 72,
     "params": [
       {
         "nullable": null,
@@ -462,10 +443,14 @@
       "spread": false,
       "description": "returns index of removed element"
     },
-    "generator": false
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
   },
   {
-    "__docId__": 17,
+    "__docId__": 15,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -478,7 +463,7 @@
     "content": "/**\n * Deeply clones object obj !== cloneObject(obj)\n * @param {Object} obj\n * @return {Object}\n */\nexport function cloneObject(obj) {\n  if (typeof obj !== 'object') throw Error('Not valid object');\n\n  let res = {};\n\n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      res[prop] = obj[prop];\n    }\n  }\n\n  return res;\n}"
   },
   {
-    "__docId__": 18,
+    "__docId__": 16,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -514,7 +499,7 @@
     "generator": false
   },
   {
-    "__docId__": 19,
+    "__docId__": 17,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -527,7 +512,7 @@
     "content": "'use strict';\n\n/**\n * Seq represents a possibly endless sequence of entities\n */\nexport class Seq {\n  /**\n   * creates instance of Seq\n   * @param  {array} values - accepts array of values\n   * @return {Seq}        [description]\n   */\n  constructor(values) {\n    if (!Array.isArray(values)) throw Error('Provide valid array');\n    this.values = values;\n    this._index = 0;\n  }\n\n  /**\n   * @return {Any} item of sequence with current index\n   */\n  get current() {\n    return this.values[this._index];\n  }\n\n  /**\n   * @return {Number} Sets current item to @param\n   */\n  set current(val) {\n    this._index = val;\n  }\n\n  /**\n   * @return {Any}\n   */\n  next() {\n    return this.values[++this._index];\n  }\n\n  /**\n   * @return {Any}\n   */\n  first() {\n    return this.values[0];\n  }\n\n  /**\n   * @return {Any}\n   */\n  last() {\n    return this.values[this.values.length - 1];\n  }\n\n  /**\n   * @return {Any}\n   */\n  nth(n) {\n    return this.values[n - 1];\n  }\n}\n"
   },
   {
-    "__docId__": 20,
+    "__docId__": 18,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -543,7 +528,7 @@
     "interface": false
   },
   {
-    "__docId__": 21,
+    "__docId__": 19,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -576,7 +561,7 @@
     "generator": false
   },
   {
-    "__docId__": 22,
+    "__docId__": 20,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -594,7 +579,7 @@
     }
   },
   {
-    "__docId__": 23,
+    "__docId__": 21,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -612,7 +597,7 @@
     }
   },
   {
-    "__docId__": 24,
+    "__docId__": 22,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -638,7 +623,7 @@
     "generator": false
   },
   {
-    "__docId__": 25,
+    "__docId__": 23,
     "kind": "set",
     "static": false,
     "variation": null,
@@ -664,7 +649,7 @@
     "generator": false
   },
   {
-    "__docId__": 26,
+    "__docId__": 24,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -682,7 +667,7 @@
     }
   },
   {
-    "__docId__": 27,
+    "__docId__": 25,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -704,7 +689,7 @@
     "generator": false
   },
   {
-    "__docId__": 28,
+    "__docId__": 26,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -726,7 +711,7 @@
     "generator": false
   },
   {
-    "__docId__": 29,
+    "__docId__": 27,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -748,7 +733,7 @@
     "generator": false
   },
   {
-    "__docId__": 30,
+    "__docId__": 28,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -777,7 +762,7 @@
     "generator": false
   },
   {
-    "__docId__": 32,
+    "__docId__": 30,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -790,7 +775,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 33,
+    "__docId__": 31,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -803,7 +788,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 34,
+    "__docId__": 32,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -816,7 +801,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -829,7 +814,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -842,7 +827,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -855,7 +840,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -868,7 +853,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -881,7 +866,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -894,7 +879,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -907,7 +892,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -920,7 +905,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -933,7 +918,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -946,7 +931,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -959,7 +944,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -972,7 +957,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -985,7 +970,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -998,7 +983,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1011,7 +996,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1024,7 +1009,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1037,7 +1022,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1050,7 +1035,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1063,7 +1048,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1076,7 +1061,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1089,7 +1074,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1102,7 +1087,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1115,7 +1100,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1128,7 +1113,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1141,7 +1126,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1154,7 +1139,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1167,7 +1152,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1180,7 +1165,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1193,7 +1178,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1206,7 +1191,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1219,7 +1204,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1232,7 +1217,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1245,7 +1230,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1258,7 +1243,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1271,7 +1256,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1284,7 +1269,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1297,7 +1282,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1310,7 +1295,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1323,7 +1308,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1336,7 +1321,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1349,7 +1334,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1362,7 +1347,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1375,7 +1360,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1388,7 +1373,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1401,7 +1386,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1414,7 +1399,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1427,7 +1412,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1440,7 +1425,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1453,7 +1438,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1466,7 +1451,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1479,7 +1464,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
