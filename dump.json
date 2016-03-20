@@ -210,7 +210,7 @@
     "access": null,
     "description": null,
     "lineNumber": 5,
-    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    /**\n     * @private store\n     * @type {array}\n     */\n    let store = items;\n    /**\n     * we store current element index in this variable\n     * @private index\n     * @type {number}\n     */\n    let index = 0;\n\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * @return {Number} return index of current item\n     */\n    this.current = () => {\n      return store[index];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.next = () => {\n      return store[index++];\n    };\n\n    /**\n     * @param {any} el - element to be inserted\n     * @param {number} ix - index to append element to\n     */\n    this.insert = (el, ix) => {\n      store.splice(ix - 1, 1, el);\n    };\n\n    /**\n     * @param {any} el - finds and returns element if it exists in the list\n     * @return {Number} returns index of provided element\n     */\n    this.find = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        return store[ix];\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * @param {any} el - remove element if it exists in the list\n     * @return {Number} returns index of removed element\n     */\n    this.remove = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        store.splice(ix, 1);\n      } else {\n        return false;\n      }\n    };\n  }\n}"
+    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    /**\n     * @private store\n     * @type {array}\n     */\n    let store = items;\n\n    /**\n     * we store current element index in this variable\n     * @private index\n     * @type {number}\n     */\n    let index = 0;\n\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * @return {Number} return index of current item\n     */\n    this.current = () => {\n      return store[index];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.next = () => {\n      return store[index++];\n    };\n\n    /**\n     * @param {any} el - element to be inserted\n     * @param {number} ix - index to append element to\n     */\n    this.insert = (el, ix) => {\n      store.splice(ix - 1, 1, el);\n    };\n\n    /**\n     * @param {any} el - finds and returns element if it exists in the list\n     * @return {Number} returns index of provided element\n     */\n    this.find = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        return store[ix];\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * @param {any} el - remove element if it exists in the list\n     * @return {Number} returns index of removed element\n     */\n    this.remove = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        store.splice(ix, 1);\n      } else {\n        return false;\n      }\n    };\n  }\n}"
   },
   {
     "__docId__": 7,
@@ -271,7 +271,7 @@
     "longname": "src/list/list.js~List#toString",
     "access": null,
     "description": "",
-    "lineNumber": 28,
+    "lineNumber": 29,
     "return": {
       "nullable": null,
       "types": [
@@ -296,7 +296,7 @@
     "longname": "src/list/list.js~List#current",
     "access": null,
     "description": "",
-    "lineNumber": 35,
+    "lineNumber": 36,
     "return": {
       "nullable": null,
       "types": [
@@ -321,7 +321,7 @@
     "longname": "src/list/list.js~List#next",
     "access": null,
     "description": "",
-    "lineNumber": 42,
+    "lineNumber": 43,
     "return": {
       "nullable": null,
       "types": [
@@ -346,7 +346,7 @@
     "longname": "src/list/list.js~List#insert",
     "access": null,
     "description": "",
-    "lineNumber": 50,
+    "lineNumber": 51,
     "params": [
       {
         "nullable": null,
@@ -385,7 +385,7 @@
     "longname": "src/list/list.js~List#find",
     "access": null,
     "description": "",
-    "lineNumber": 58,
+    "lineNumber": 59,
     "params": [
       {
         "nullable": null,
@@ -422,7 +422,7 @@
     "longname": "src/list/list.js~List#remove",
     "access": null,
     "description": "",
-    "lineNumber": 72,
+    "lineNumber": 73,
     "params": [
       {
         "nullable": null,
