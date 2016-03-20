@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "'use strict';\n\nexport function merge(left, right) {\n  /**\n   * Utility function that merges two arrays together\n   * @param  {Array}\n   * @param  {Array}\n   * @return {Array}\n   */\n  let il = 0, ir = 0, res = [];\n\n  while (il < left.length && ir < right.length) {\n    if (left[il] < right[ir]) {\n      res.push(left[il++]);\n    } else {\n      res.push(right[ir++]);\n    }\n  }\n\n  return res.concat(left.slice(il)).concat(right.slice(ir));\n}\n\nexport function mergeSort(items) {\n  /**\n   * Sorts array by dividing it into smaller arrays\n   * and recursively calling itself.\n   * @param  {Array}\n   * @return {Array}\n   */\n  if (items.length < 2) {\n    return items;\n  }\n\n  let middle = Math.floor(items.length / 2);\n  let left =  items.slice(0, middle);\n  let right = items.slice(middle);\n\n  return merge(mergeSort(left), mergeSort(right));\n}\n"
+    "content": "'use strict';\n\n/**\n * Utility function that merges two arrays together\n * @param  {Array} left\n * @param  {Array} right\n * @return {Array}\n */\nexport function merge(left, right) {\n  let il = 0, ir = 0, res = [];\n\n  while (il < left.length && ir < right.length) {\n    if (left[il] < right[ir]) {\n      res.push(left[il++]);\n    } else {\n      res.push(right[ir++]);\n    }\n  }\n\n  return res.concat(left.slice(il)).concat(right.slice(ir));\n}\n\n/**\n * Sorts array by dividing it into smaller arrays\n * and recursively calling itself.\n * @param  {Array} items\n * @return {Array}\n */\nexport function mergeSort(items) {\n  if (items.length < 2) {\n    return items;\n  }\n\n  let middle = Math.floor(items.length / 2);\n  let left =  items.slice(0, middle);\n  let right = items.slice(middle);\n\n  return merge(mergeSort(left), mergeSort(right));\n}\n"
   },
   {
     "__docId__": 1,
@@ -24,27 +24,37 @@
     "export": true,
     "importPath": "cs-in-js/src/array/mergeSort.js",
     "importStyle": "{merge}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Utility function that merges two arrays together",
+    "lineNumber": 9,
     "params": [
       {
-        "name": "left",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "left",
+        "description": ""
       },
       {
-        "name": "right",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "right",
+        "description": ""
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -60,21 +70,27 @@
     "export": true,
     "importPath": "cs-in-js/src/array/mergeSort.js",
     "importStyle": "{mergeSort}",
-    "description": null,
-    "lineNumber": 23,
-    "undocument": true,
+    "description": "Sorts array by dividing it into smaller arrays\nand recursively calling itself.",
+    "lineNumber": 29,
     "params": [
       {
-        "name": "items",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "items",
+        "description": ""
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -89,41 +105,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "'use strict';\n\nexport function shallowCopy(a,b) {\n  for (let i = 0; i < a.length; ++i) {\n    b[i] = a[i];\n  }\n}\n\nexport function shuffle(array) {\n  let m = array.length, t, i;\n\n  while (m) {\n    // random index between the unshuffled\n    i = Math.floor(Math.random() * m--);\n\n    // swap it with current element\n    t = array[m];\n    array[m] = array[i];\n    array[i] = t;\n  }\n\n  return array;\n}\n\nexport function createMatrix(numrows, numcols, initial) {\n  let res = [];\n\n  for (let i = 0; i < numrows; i++) {\n    let row = [];\n    for (let j = 0; j < numcols; j++) {\n      row.push(initial);\n    }\n    res.push(row);\n  }\n\n  return res;\n}"
+    "content": "'use strict';\n\n/**\n * In-place shuffles the array using Fisher–Yates algorithm\n * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle\n * @param  {array} array — accepts array of numbers\n * @return {array]}\n */\nexport function shuffle(array) {\n  let m = array.length, t, i;\n\n  while (m) {\n    // random index between the unshuffled\n    i = Math.floor(Math.random() * m--);\n\n    // swap it with current element\n    t = array[m];\n    array[m] = array[i];\n    array[i] = t;\n  }\n\n  return array;\n}\n\n/**\n * Creates two-dimetioal matrix,\n * @param  {number} numrows — number of rows\n * @param  {number} numcols — number of columns\n * @param  {any} initial — the value to be populated\n * @return {array} - array of arrays\n */\nexport function createMatrix(numrows, numcols, initial) {\n  let res = [];\n\n  for (let i = 0; i < numrows; i++) {\n    let row = [];\n    for (let j = 0; j < numcols; j++) {\n      row.push(initial);\n    }\n    res.push(row);\n  }\n\n  return res;\n}"
   },
   {
     "__docId__": 4,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "shallowCopy",
-    "memberof": "src/array/utils.js",
-    "longname": "src/array/utils.js~shallowCopy",
-    "access": null,
-    "export": true,
-    "importPath": "cs-in-js/src/array/utils.js",
-    "importStyle": "{shallowCopy}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "params": [
-      {
-        "name": "a",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "b",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 5,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -134,26 +119,32 @@
     "export": true,
     "importPath": "cs-in-js/src/array/utils.js",
     "importStyle": "{shuffle}",
-    "description": null,
+    "description": "In-place shuffles the array using Fisher–Yates algorithm\nhttps://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle",
     "lineNumber": 9,
-    "undocument": true,
     "params": [
       {
-        "name": "array",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "array",
+        "description": "— accepts array of numbers"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "array]"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 6,
+    "__docId__": 5,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -164,38 +155,52 @@
     "export": true,
     "importPath": "cs-in-js/src/array/utils.js",
     "importStyle": "{createMatrix}",
-    "description": null,
-    "lineNumber": 25,
-    "undocument": true,
+    "description": "Creates two-dimetioal matrix,",
+    "lineNumber": 32,
     "params": [
       {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "numrows",
-        "types": [
-          "*"
-        ]
+        "description": "— number of rows"
       },
       {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "numcols",
-        "types": [
-          "*"
-        ]
+        "description": "— number of columns"
       },
       {
-        "name": "initial",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "initial",
+        "description": "— the value to be populated"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "array"
+      ],
+      "spread": false,
+      "description": "array of arrays"
     },
     "generator": false
   },
   {
-    "__docId__": 7,
+    "__docId__": 6,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -204,11 +209,11 @@
     "longname": "src/list/list.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "'use strict';\n\n/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  constructor(items) {\n    this.data = items;\n    this._index = 0;\n  }\n\n  toString() {\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    return this.data.toString();\n  }\n\n  current() {\n    /**\n     * @return {Number} return index of current item\n     */\n    return this.data[this._index];\n  }\n\n  next() {\n    /**\n     * @return {Number}\n     */\n    return this.data[this._index++];\n  }\n\n  add(el) {\n    /**\n     * @param {Any}\n     * @return {Number} returns index of added element\n     */\n    this.data.push(el);\n    this._index = ++this._index;\n    return this._index;\n  }\n\n  find(el) {\n    /**\n     * @param  {Any}\n     * @return {Number} returns index of provided element\n     */\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      return this.data[ix];\n    } else {\n      return 'No such element in list';\n    }\n  }\n\n  remove(el) {\n    /**\n     * @param  {Any}\n     * @return {Number} returns index of removed element\n     */\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      this.data.splice(ix, 1);\n    } else {\n      return 'No such element in list';\n    }\n  }\n}"
+    "lineNumber": 5,
+    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}       [description]\n   */\n  constructor(items) {\n    this.data = items;\n    this._index = 0;\n  }\n\n  /**\n   * @return {String} returns stringified representation\n   * of the content of list\n   */\n  toString() {\n    return this.data.toString();\n  }\n\n  /**\n   * @return {Number} return index of current item\n   */\n  current() {\n    return this.data[this._index];\n  }\n\n  /**\n   * @return {Number}\n   */\n  next() {\n    return this.data[this._index++];\n  }\n\n  /**\n   * @return {Number} returns index of added element\n   */\n  add(el) {\n    this.data.push(el);\n    this._index = ++this._index;\n    return this._index;\n  }\n\n  /**\n   * @return {Number} returns index of provided element\n   */\n  find(el) {\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      return this.data[ix];\n    } else {\n      return 'No such element in list';\n    }\n  }\n\n  /**\n   * @return {Number} returns index of removed element\n   */\n  remove(el) {\n    let ix = this.data.indexOf(el);\n\n    if (ix > 0) {\n      this.data.splice(ix, 1);\n    } else {\n      return 'No such element in list';\n    }\n  }\n}"
   },
   {
-    "__docId__": 8,
+    "__docId__": 7,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -220,11 +225,11 @@
     "importPath": "cs-in-js/src/list/list.js",
     "importStyle": "{List}",
     "description": "List data structure.\nlet list = new List([1,2,3])",
-    "lineNumber": 7,
+    "lineNumber": 5,
     "interface": false
   },
   {
-    "__docId__": 9,
+    "__docId__": 8,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -232,21 +237,32 @@
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#constructor",
     "access": null,
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "creates instance of list",
+    "lineNumber": 11,
     "params": [
       {
-        "name": "items",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "items",
+        "description": "array of items to be place into the list"
       }
     ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "List"
+      ],
+      "spread": false,
+      "description": "[description]"
+    },
     "generator": false
   },
   {
-    "__docId__": 10,
+    "__docId__": 9,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -255,7 +271,7 @@
     "longname": "src/list/list.js~List#data",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 12,
     "undocument": true,
     "type": {
       "types": [
@@ -264,7 +280,7 @@
     }
   },
   {
-    "__docId__": 11,
+    "__docId__": 10,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -273,7 +289,7 @@
     "longname": "src/list/list.js~List#_index",
     "access": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 13,
     "undocument": true,
     "type": {
       "types": [
@@ -282,7 +298,7 @@
     }
   },
   {
-    "__docId__": 12,
+    "__docId__": 11,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -290,14 +306,38 @@
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#toString",
     "access": null,
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 20,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "String"
+      ],
+      "spread": false,
+      "description": "returns stringified representation\nof the content of list"
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 12,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "current",
+    "memberof": "src/list/list.js~List",
+    "longname": "src/list/list.js~List#current",
+    "access": null,
+    "description": "",
+    "lineNumber": 27,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number"
+      ],
+      "spread": false,
+      "description": "return index of current item"
     },
     "generator": false
   },
@@ -306,18 +346,20 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "current",
+    "name": "next",
     "memberof": "src/list/list.js~List",
-    "longname": "src/list/list.js~List#current",
+    "longname": "src/list/list.js~List#next",
     "access": null,
-    "description": null,
-    "lineNumber": 21,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 34,
     "params": [],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Number"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
@@ -326,33 +368,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "next",
-    "memberof": "src/list/list.js~List",
-    "longname": "src/list/list.js~List#next",
-    "access": null,
-    "description": null,
-    "lineNumber": 28,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 15,
-    "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "add",
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#add",
     "access": null,
-    "description": null,
-    "lineNumber": 35,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 41,
     "params": [
       {
         "name": "el",
@@ -362,14 +383,17 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Number"
+      ],
+      "spread": false,
+      "description": "returns index of added element"
     },
     "generator": false
   },
   {
-    "__docId__": 16,
+    "__docId__": 15,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -378,7 +402,7 @@
     "longname": "src/list/list.js~List#_index",
     "access": null,
     "description": null,
-    "lineNumber": 41,
+    "lineNumber": 43,
     "undocument": true,
     "type": {
       "types": [
@@ -387,7 +411,7 @@
     }
   },
   {
-    "__docId__": 17,
+    "__docId__": 16,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -395,9 +419,8 @@
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#find",
     "access": null,
-    "description": null,
-    "lineNumber": 45,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 50,
     "params": [
       {
         "name": "el",
@@ -407,14 +430,17 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "string"
-      ]
+        "Number"
+      ],
+      "spread": false,
+      "description": "returns index of provided element"
     },
     "generator": false
   },
   {
-    "__docId__": 18,
+    "__docId__": 17,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -422,9 +448,8 @@
     "memberof": "src/list/list.js~List",
     "longname": "src/list/list.js~List#remove",
     "access": null,
-    "description": null,
-    "lineNumber": 59,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 63,
     "params": [
       {
         "name": "el",
@@ -434,14 +459,17 @@
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "string"
-      ]
+        "Number"
+      ],
+      "spread": false,
+      "description": "returns index of removed element"
     },
     "generator": false
   },
   {
-    "__docId__": 19,
+    "__docId__": 18,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -450,11 +478,11 @@
     "longname": "src/obj-utils.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "'use strict';\n\nexport function cloneObject(obj) {\n  /*\n   * Deeply clones object.\n   * obj !== cloneObject(obj)\n   * @param  {Object}\n   * @return {Object}\n   */\n  if (typeof obj !== 'object') throw Error('Not valid object');\n\n  let res = {};\n\n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      res[prop] = obj[prop];\n    }\n  }\n\n  return res;\n}"
+    "lineNumber": 6,
+    "content": "/**\n * Deeply clones object obj !== cloneObject(obj)\n * @param {Object} obj\n * @return {Object}\n */\nexport function cloneObject(obj) {\n  if (typeof obj !== 'object') throw Error('Not valid object');\n\n  let res = {};\n\n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      res[prop] = obj[prop];\n    }\n  }\n\n  return res;\n}"
   },
   {
-    "__docId__": 20,
+    "__docId__": 19,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -465,26 +493,32 @@
     "export": true,
     "importPath": "cs-in-js/src/obj-utils.js",
     "importStyle": "{cloneObject}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Deeply clones object obj !== cloneObject(obj)",
+    "lineNumber": 6,
     "params": [
       {
-        "name": "obj",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "obj",
+        "description": ""
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": ""
     },
     "generator": false
   },
   {
-    "__docId__": 21,
+    "__docId__": 20,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -494,10 +528,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "'use strict';\n\n/**\n * Seq represents a possibly endless sequence of entities\n */\nexport class Seq {\n  constructor(values) {\n    if (!Array.isArray(values)) throw Error('Provide valid array');\n    this.values = values;\n    this._index = 0;\n  }\n\n  /**\n   * @return {Any} item of sequence with current index\n   */\n  get current() {\n    return this.values[this._index];\n  }\n\n  /**\n   * @param {Any}\n   * @return {Number} Sets current item to @param\n   */\n  set current(val) {\n    this._index = val;\n  }\n\n  /**\n   * @return {Any}\n   */\n  next() {\n    return this.values[++this._index];\n  }\n\n  /**\n   * @return {Any}\n   */\n  first() {\n    return this.values[0];\n  }\n\n  /**\n   * @return {Any}\n   */\n  last() {\n    return this.values[this.values.length - 1];\n  }\n\n  /**\n   * @param {Number}\n   * @return {Any}\n   */\n  nth(n) {\n    return this.values[n - 1];\n  }\n}\n"
+    "content": "'use strict';\n\n/**\n * Seq represents a possibly endless sequence of entities\n */\nexport class Seq {\n  /**\n   * creates instance of Seq\n   * @param  {array} values - accepts array of values\n   * @return {Seq}        [description]\n   */\n  constructor(values) {\n    if (!Array.isArray(values)) throw Error('Provide valid array');\n    this.values = values;\n    this._index = 0;\n  }\n\n  /**\n   * @return {Any} item of sequence with current index\n   */\n  get current() {\n    return this.values[this._index];\n  }\n\n  /**\n   * @return {Number} Sets current item to @param\n   */\n  set current(val) {\n    this._index = val;\n  }\n\n  /**\n   * @return {Any}\n   */\n  next() {\n    return this.values[++this._index];\n  }\n\n  /**\n   * @return {Any}\n   */\n  first() {\n    return this.values[0];\n  }\n\n  /**\n   * @return {Any}\n   */\n  last() {\n    return this.values[this.values.length - 1];\n  }\n\n  /**\n   * @return {Any}\n   */\n  nth(n) {\n    return this.values[n - 1];\n  }\n}\n"
   },
   {
-    "__docId__": 22,
+    "__docId__": 21,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -513,7 +547,7 @@
     "interface": false
   },
   {
-    "__docId__": 23,
+    "__docId__": 22,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -521,21 +555,32 @@
     "memberof": "src/seq.js~Seq",
     "longname": "src/seq.js~Seq#constructor",
     "access": null,
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "creates instance of Seq",
+    "lineNumber": 12,
     "params": [
       {
-        "name": "values",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "values",
+        "description": "accepts array of values"
       }
     ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Seq"
+      ],
+      "spread": false,
+      "description": "[description]"
+    },
     "generator": false
   },
   {
-    "__docId__": 24,
+    "__docId__": 23,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -544,7 +589,7 @@
     "longname": "src/seq.js~Seq#values",
     "access": null,
     "description": null,
-    "lineNumber": 9,
+    "lineNumber": 14,
     "undocument": true,
     "type": {
       "types": [
@@ -553,7 +598,7 @@
     }
   },
   {
-    "__docId__": 25,
+    "__docId__": 24,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -562,7 +607,7 @@
     "longname": "src/seq.js~Seq#_index",
     "access": null,
     "description": null,
-    "lineNumber": 10,
+    "lineNumber": 15,
     "undocument": true,
     "type": {
       "types": [
@@ -571,7 +616,7 @@
     }
   },
   {
-    "__docId__": 26,
+    "__docId__": 25,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -580,7 +625,7 @@
     "longname": "src/seq.js~Seq#current",
     "access": null,
     "description": "",
-    "lineNumber": 16,
+    "lineNumber": 21,
     "return": {
       "nullable": null,
       "types": [
@@ -597,7 +642,7 @@
     "generator": false
   },
   {
-    "__docId__": 27,
+    "__docId__": 26,
     "kind": "set",
     "static": false,
     "variation": null,
@@ -606,8 +651,7 @@
     "longname": "src/seq.js~Seq#current",
     "access": null,
     "description": "",
-    "lineNumber": 24,
-    "params": [],
+    "lineNumber": 28,
     "return": {
       "nullable": null,
       "types": [
@@ -624,7 +668,7 @@
     "generator": false
   },
   {
-    "__docId__": 28,
+    "__docId__": 27,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -633,7 +677,7 @@
     "longname": "src/seq.js~Seq#_index",
     "access": null,
     "description": null,
-    "lineNumber": 25,
+    "lineNumber": 29,
     "undocument": true,
     "type": {
       "types": [
@@ -642,7 +686,7 @@
     }
   },
   {
-    "__docId__": 29,
+    "__docId__": 28,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -651,7 +695,29 @@
     "longname": "src/seq.js~Seq#next",
     "access": null,
     "description": "",
-    "lineNumber": 31,
+    "lineNumber": 35,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Any"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "first",
+    "memberof": "src/seq.js~Seq",
+    "longname": "src/seq.js~Seq#first",
+    "access": null,
+    "description": "",
+    "lineNumber": 42,
     "params": [],
     "return": {
       "nullable": null,
@@ -668,12 +734,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "first",
+    "name": "last",
     "memberof": "src/seq.js~Seq",
-    "longname": "src/seq.js~Seq#first",
+    "longname": "src/seq.js~Seq#last",
     "access": null,
     "description": "",
-    "lineNumber": 38,
+    "lineNumber": 49,
     "params": [],
     "return": {
       "nullable": null,
@@ -690,35 +756,20 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "last",
-    "memberof": "src/seq.js~Seq",
-    "longname": "src/seq.js~Seq#last",
-    "access": null,
-    "description": "",
-    "lineNumber": 45,
-    "params": [],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Any"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 32,
-    "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "nth",
     "memberof": "src/seq.js~Seq",
     "longname": "src/seq.js~Seq#nth",
     "access": null,
     "description": "",
-    "lineNumber": 53,
-    "params": [],
+    "lineNumber": 56,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
     "return": {
       "nullable": null,
       "types": [
@@ -730,7 +781,7 @@
     "generator": false
   },
   {
-    "__docId__": 34,
+    "__docId__": 33,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -743,7 +794,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 35,
+    "__docId__": 34,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -756,7 +807,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 36,
+    "__docId__": 35,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -769,7 +820,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 37,
+    "__docId__": 36,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -782,7 +833,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 38,
+    "__docId__": 37,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -795,7 +846,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 39,
+    "__docId__": 38,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -808,7 +859,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 40,
+    "__docId__": 39,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -821,7 +872,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 41,
+    "__docId__": 40,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -834,7 +885,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 42,
+    "__docId__": 41,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -847,7 +898,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 43,
+    "__docId__": 42,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -860,7 +911,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 43,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -873,7 +924,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -886,7 +937,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -899,7 +950,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -912,7 +963,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -925,7 +976,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -938,7 +989,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -951,7 +1002,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -964,7 +1015,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -977,7 +1028,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -990,7 +1041,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1003,7 +1054,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1016,7 +1067,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1029,7 +1080,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1042,7 +1093,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1055,7 +1106,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1068,7 +1119,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1081,7 +1132,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1094,7 +1145,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1107,7 +1158,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1120,7 +1171,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1133,7 +1184,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1146,7 +1197,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1159,7 +1210,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1172,7 +1223,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1185,7 +1236,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1198,7 +1249,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1211,7 +1262,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1224,7 +1275,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1237,7 +1288,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1250,7 +1301,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1263,7 +1314,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1276,7 +1327,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1289,7 +1340,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1302,7 +1353,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1315,7 +1366,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1328,7 +1379,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1341,7 +1392,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1354,7 +1405,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1367,7 +1418,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1380,7 +1431,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1393,7 +1444,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1406,7 +1457,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1419,7 +1470,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1432,7 +1483,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,

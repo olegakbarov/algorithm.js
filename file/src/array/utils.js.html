@@ -37,7 +37,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">array</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-merge">merge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeSort">mergeSort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createMatrix">createMatrix</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shallowCopy">shallowCopy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">list</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/list/list.js~List.html">List</a></span></span></li>
 </ul>
@@ -47,12 +46,12 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/array/utils.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 
-export function shallowCopy(a,b) {
-  for (let i = 0; i &lt; a.length; ++i) {
-    b[i] = a[i];
-  }
-}
-
+/**
+ * In-place shuffles the array using Fisher&#x2013;Yates algorithm
+ * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+ * @param  {array} array &#x2014; accepts array of numbers
+ * @return {array]}
+ */
 export function shuffle(array) {
   let m = array.length, t, i;
 
@@ -69,6 +68,13 @@ export function shuffle(array) {
   return array;
 }
 
+/**
+ * Creates two-dimetioal matrix,
+ * @param  {number} numrows &#x2014; number of rows
+ * @param  {number} numcols &#x2014; number of columns
+ * @param  {any} initial &#x2014; the value to be populated
+ * @return {array} - array of arrays
+ */
 export function createMatrix(numrows, numcols, initial) {
   let res = [];
 

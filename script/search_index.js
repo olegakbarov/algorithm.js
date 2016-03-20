@@ -36,12 +36,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "cs-in-js/src/array/utils.js~shallowcopy",
-    "function/index.html#static-function-shallowCopy",
-    "<span>shallowCopy</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
-    "function"
-  ],
-  [
     "cs-in-js/src/array/utils.js~shuffle",
     "function/index.html#static-function-shuffle",
     "<span>shuffle</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",

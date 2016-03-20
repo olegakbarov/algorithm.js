@@ -37,7 +37,6 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">array</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-merge">merge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeSort">mergeSort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createMatrix">createMatrix</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shallowCopy">shallowCopy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">list</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/list/list.js~List.html">List</a></span></span></li>
 </ul>
@@ -45,55 +44,56 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/list/list.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
-
-/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * List data structure.
  * let list = new List([1,2,3])
  */
 export class List {
+  /**
+   * creates instance of list
+   * @param  {array} items - array of items to be place into the list
+   * @return {List}       [description]
+   */
   constructor(items) {
     this.data = items;
     this._index = 0;
   }
 
+  /**
+   * @return {String} returns stringified representation
+   * of the content of list
+   */
   toString() {
-    /**
-     * @return {String} returns stringified representation
-     * of the content of list
-     */
     return this.data.toString();
   }
 
+  /**
+   * @return {Number} return index of current item
+   */
   current() {
-    /**
-     * @return {Number} return index of current item
-     */
     return this.data[this._index];
   }
 
+  /**
+   * @return {Number}
+   */
   next() {
-    /**
-     * @return {Number}
-     */
     return this.data[this._index++];
   }
 
+  /**
+   * @return {Number} returns index of added element
+   */
   add(el) {
-    /**
-     * @param {Any}
-     * @return {Number} returns index of added element
-     */
     this.data.push(el);
     this._index = ++this._index;
     return this._index;
   }
 
+  /**
+   * @return {Number} returns index of provided element
+   */
   find(el) {
-    /**
-     * @param  {Any}
-     * @return {Number} returns index of provided element
-     */
     let ix = this.data.indexOf(el);
 
     if (ix &gt; 0) {
@@ -103,11 +103,10 @@ export class List {
     }
   }
 
+  /**
+   * @return {Number} returns index of removed element
+   */
   remove(el) {
-    /**
-     * @param  {Any}
-     * @return {Number} returns index of removed element
-     */
     let ix = this.data.indexOf(el);
 
     if (ix &gt; 0) {
