@@ -1,12 +1,12 @@
 'use strict';
 
+/**
+ * Utility function that merges two arrays together
+ * @param  {Array} left
+ * @param  {Array} right
+ * @return {Array}
+ */
 export function merge(left, right) {
-  /**
-   * Utility function that merges two arrays together
-   * @param  {Array}
-   * @param  {Array}
-   * @return {Array}
-   */
   let il = 0, ir = 0, res = [];
 
   while (il < left.length && ir < right.length) {
@@ -20,13 +20,13 @@ export function merge(left, right) {
   return res.concat(left.slice(il)).concat(right.slice(ir));
 }
 
+/**
+ * Sorts array by dividing it into smaller arrays
+ * and recursively calling itself.
+ * @param  {Array} items
+ * @return {Array}
+ */
 export function mergeSort(items) {
-  /**
-   * Sorts array by dividing it into smaller arrays
-   * and recursively calling itself.
-   * @param  {Array}
-   * @return {Array}
-   */
   if (items.length < 2) {
     return items;
   }

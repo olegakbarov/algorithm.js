@@ -1,12 +1,9 @@
-'use strict';
-
+/**
+ * Deeply clones object obj !== cloneObject(obj)
+ * @param {Object} obj
+ * @return {Object}
+ */
 export function cloneObject(obj) {
-  /*
-   * Deeply clones object.
-   * obj !== cloneObject(obj)
-   * @param  {Object}
-   * @return {Object}
-   */
   if (typeof obj !== 'object') throw Error('Not valid object');
 
   let res = {};

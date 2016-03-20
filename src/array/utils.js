@@ -1,11 +1,11 @@
 'use strict';
 
-export function shallowCopy(a,b) {
-  for (let i = 0; i < a.length; ++i) {
-    b[i] = a[i];
-  }
-}
-
+/**
+ * In-place shuffles the array using Fisher–Yates algorithm
+ * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+ * @param  {array} array — accepts array of numbers
+ * @return {array]}
+ */
 export function shuffle(array) {
   let m = array.length, t, i;
 
@@ -22,6 +22,13 @@ export function shuffle(array) {
   return array;
 }
 
+/**
+ * Creates two-dimetioal matrix,
+ * @param  {number} numrows — number of rows
+ * @param  {number} numcols — number of columns
+ * @param  {any} initial — the value to be populated
+ * @return {array} - array of arrays
+ */
 export function createMatrix(numrows, numcols, initial) {
   let res = [];
 

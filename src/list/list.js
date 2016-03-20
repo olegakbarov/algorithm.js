@@ -1,52 +1,53 @@
-'use strict';
-
 /**
  * List data structure.
  * let list = new List([1,2,3])
  */
 export class List {
+  /**
+   * creates instance of list
+   * @param  {array} items - array of items to be place into the list
+   * @return {List}       [description]
+   */
   constructor(items) {
     this.data = items;
     this._index = 0;
   }
 
+  /**
+   * @return {String} returns stringified representation
+   * of the content of list
+   */
   toString() {
-    /**
-     * @return {String} returns stringified representation
-     * of the content of list
-     */
     return this.data.toString();
   }
 
+  /**
+   * @return {Number} return index of current item
+   */
   current() {
-    /**
-     * @return {Number} return index of current item
-     */
     return this.data[this._index];
   }
 
+  /**
+   * @return {Number}
+   */
   next() {
-    /**
-     * @return {Number}
-     */
     return this.data[this._index++];
   }
 
+  /**
+   * @return {Number} returns index of added element
+   */
   add(el) {
-    /**
-     * @param {Any}
-     * @return {Number} returns index of added element
-     */
     this.data.push(el);
     this._index = ++this._index;
     return this._index;
   }
 
+  /**
+   * @return {Number} returns index of provided element
+   */
   find(el) {
-    /**
-     * @param  {Any}
-     * @return {Number} returns index of provided element
-     */
     let ix = this.data.indexOf(el);
 
     if (ix > 0) {
@@ -56,11 +57,10 @@ export class List {
     }
   }
 
+  /**
+   * @return {Number} returns index of removed element
+   */
   remove(el) {
-    /**
-     * @param  {Any}
-     * @return {Number} returns index of removed element
-     */
     let ix = this.data.indexOf(el);
 
     if (ix > 0) {

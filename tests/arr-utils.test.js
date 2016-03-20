@@ -1,5 +1,5 @@
 import test from 'tape';
-import { createMatrix, shuffle } from '../src/arr/utils.js';
+import { createMatrix, shuffle } from '../src/array/utils.js';
 
 test('[utils] Shuffle', assert => {
   let arr = [1,2,3,5,8,13,21];

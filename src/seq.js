@@ -4,6 +4,11 @@
  * Seq represents a possibly endless sequence of entities
  */
 export class Seq {
+  /**
+   * creates instance of Seq
+   * @param  {array} values - accepts array of values
+   * @return {Seq}        [description]
+   */
   constructor(values) {
     if (!Array.isArray(values)) throw Error('Provide valid array');
     this.values = values;
@@ -18,7 +23,6 @@ export class Seq {
   }
 
   /**
-   * @param {Any}
    * @return {Number} Sets current item to @param
    */
   set current(val) {
@@ -47,7 +51,6 @@ export class Seq {
   }
 
   /**
-   * @param {Number}
    * @return {Any}
    */
   nth(n) {

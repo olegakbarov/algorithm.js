@@ -1,7 +1,7 @@
 /* eslint-disable max-statements */
 
 import test from 'tape';
-import { merge, mergeSort } from '../src/arr/mergeSort.js';
+import { merge, mergeSort } from '../src/array/mergeSort.js';
 
 test('mergeSort', assert => {
   let msg;
