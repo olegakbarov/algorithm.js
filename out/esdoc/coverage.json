@@ -1,0 +1,59 @@
+{
+  "coverage": "4.16%",
+  "expectCount": 24,
+  "actualCount": 1,
+  "files": {
+    "src/list/list.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        21,
+        4,
+        13,
+        5,
+        27,
+        17,
+        37,
+        9
+      ]
+    },
+    "src/seq.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        14,
+        10,
+        22,
+        26,
+        18,
+        30,
+        6
+      ]
+    },
+    "src/obj-utils.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/arr/utils.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        28,
+        4,
+        11
+      ]
+    },
+    "src/arr/mergeSort.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        19
+      ]
+    }
+  }
+}
