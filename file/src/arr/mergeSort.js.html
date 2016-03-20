@@ -47,7 +47,12 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/arr/mergeSort.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 
-/* this merges two sorted arrays */
+/**
+ * Utility function that merges two arrays together
+ * @param  {array}
+ * @param  {array}
+ * @return {array}
+ */
 export function merge(left, right) {
   let il = 0, ir = 0, res = [];
 
@@ -62,7 +67,12 @@ export function merge(left, right) {
   return res.concat(left.slice(il)).concat(right.slice(ir));
 }
 
-/* this sorts array */
+/**
+ * Sorts array by dividing it into smaller arrays
+ * and recursively calling itself.
+ * @param  {array}
+ * @return {array}
+ */
 export function mergeSort(items) {
   if (items.length &lt; 2) {
     return items;

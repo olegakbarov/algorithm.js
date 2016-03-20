@@ -18,33 +18,33 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "cs-in-js/src/arr/utils.js~creatematrix",
+    "cs-in-js/src/array/utils.js~creatematrix",
     "function/index.html#static-function-createMatrix",
-    "<span>createMatrix</span> <span class=\"search-result-import-path\">cs-in-js/src/arr/utils.js</span>",
+    "<span>createMatrix</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/arr/mergesort.js~merge",
+    "cs-in-js/src/array/mergesort.js~merge",
     "function/index.html#static-function-merge",
-    "<span>merge</span> <span class=\"search-result-import-path\">cs-in-js/src/arr/mergeSort.js</span>",
+    "<span>merge</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/arr/mergesort.js~mergesort",
+    "cs-in-js/src/array/mergesort.js~mergesort",
     "function/index.html#static-function-mergeSort",
-    "<span>mergeSort</span> <span class=\"search-result-import-path\">cs-in-js/src/arr/mergeSort.js</span>",
+    "<span>mergeSort</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/arr/utils.js~shallowcopy",
+    "cs-in-js/src/array/utils.js~shallowcopy",
     "function/index.html#static-function-shallowCopy",
-    "<span>shallowCopy</span> <span class=\"search-result-import-path\">cs-in-js/src/arr/utils.js</span>",
+    "<span>shallowCopy</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/arr/utils.js~shuffle",
+    "cs-in-js/src/array/utils.js~shuffle",
     "function/index.html#static-function-shuffle",
-    "<span>shuffle</span> <span class=\"search-result-import-path\">cs-in-js/src/arr/utils.js</span>",
+    "<span>shuffle</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
     "function"
   ],
   [
@@ -378,15 +378,15 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/arr/mergesort.js",
-    "file/src/arr/mergeSort.js.html",
-    "src/arr/mergeSort.js",
+    "src/array/mergesort.js",
+    "file/src/array/mergeSort.js.html",
+    "src/array/mergeSort.js",
     "file"
   ],
   [
-    "src/arr/utils.js",
-    "file/src/arr/utils.js.html",
-    "src/arr/utils.js",
+    "src/array/utils.js",
+    "file/src/array/utils.js.html",
+    "src/array/utils.js",
     "file"
   ],
   [

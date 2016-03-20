@@ -1,58 +1,52 @@
 {
-  "coverage": "4.16%",
+  "coverage": "33.33%",
   "expectCount": 24,
-  "actualCount": 1,
+  "actualCount": 8,
   "files": {
     "src/list/list.js": {
       "expectCount": 9,
-      "actualCount": 0,
+      "actualCount": 1,
       "undocumentLines": [
-        3,
+        35,
+        8,
         21,
-        4,
-        13,
-        5,
-        27,
-        17,
-        37,
-        9
+        9,
+        45,
+        28,
+        59,
+        13
       ]
     },
     "src/seq.js": {
       "expectCount": 9,
-      "actualCount": 0,
+      "actualCount": 7,
       "undocumentLines": [
-        3,
-        4,
-        14,
-        10,
-        22,
-        26,
-        18,
-        30,
-        6
+        7,
+        9
       ]
     },
     "src/obj-utils.js": {
       "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
     },
-    "src/arr/utils.js": {
+    "src/array/utils.js": {
       "expectCount": 3,
       "actualCount": 0,
       "undocumentLines": [
-        28,
-        4,
-        11
+        25,
+        3,
+        9
       ]
     },
-    "src/arr/mergeSort.js": {
+    "src/array/mergeSort.js": {
       "expectCount": 2,
       "actualCount": 0,
       "undocumentLines": [
-        4,
-        19
+        3,
+        23
       ]
     }
   }

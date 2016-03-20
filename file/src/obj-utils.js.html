@@ -34,7 +34,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/seq.js~Seq.html">Seq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cloneObject">cloneObject</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">arr</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-merge">merge</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">array</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-merge">merge</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeSort">mergeSort</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createMatrix">createMatrix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shallowCopy">shallowCopy</a></span></span></li>
@@ -47,11 +47,13 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/obj-utils.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
 
-/**
- * ES5 has Object.create(src)
- * ES6 has Object.assign({}, src)
- */
 export function cloneObject(obj) {
+  /*
+   * Deeply clones object.
+   * obj !== cloneObject(obj)
+   * @param  {Object}
+   * @return {Object}
+   */
   if (typeof obj !== &apos;object&apos;) throw Error(&apos;Not valid object&apos;);
 
   let res = {};
