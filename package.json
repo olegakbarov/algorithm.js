@@ -12,19 +12,26 @@
     "eslint": "^2.4.0",
     "estraverse-fb": "^1.3.1",
     "faucet": "0.0.1",
+    "gh-pages": "^0.11.0",
     "tape": "^4.5.1"
   },
   "scripts": {
     "test": "babel-tape-runner tests/**/*.js | faucet",
     "lint": "eslint .",
-    "prepublish": "npm run test && npm run lint"
+    "prepublish": "npm run test && npm run lint",
+    "docs": "esdoc -c esdoc.json",
+    "publish": "npm run docs && npm run deploy",
+    "deploy": "gh-pages -d ./out/esdoc"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/olegakbarov/cs-in-js.git"
   },
   "keywords": [
-    "js"
+    "js",
+    "algorithms",
+    "data structures",
+    "sort"
   ],
   "author": "Oleg Akbarov",
   "license": "MIT",
