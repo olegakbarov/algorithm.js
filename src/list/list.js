@@ -45,6 +45,29 @@ export class List {
     };
 
     /**
+     * @return {Number}
+     */
+    this.prev = () => {
+      return store[++index];
+    };
+
+    /**
+     * set the index to the first element of list
+     * @return {void}
+     */
+    this.front = () => {
+      index = 0;
+    };
+
+    /**
+     * set the index to the last element of list
+     * @return {void}
+     */
+    this.end = () => {
+      index = store.length - 1;
+    };
+
+    /**
      * @param {any} el - element to be inserted
      * @param {number} ix - index to append element to
      */
@@ -78,6 +101,24 @@ export class List {
       } else {
         return false;
       }
+    };
+
+    /**
+     * checks in item exists in list
+     * @param  {any} el - item to check
+     * @return {boolean}
+     */
+    this.contains = el => {
+      // TODO reimplemet with .deepEqual()
+      return store.indexOf(el) > 0;
+    };
+
+    /**
+     * clear list instance
+     * @return {void}
+     */
+    this.clear = () => {
+      store = [];
     };
   }
 }

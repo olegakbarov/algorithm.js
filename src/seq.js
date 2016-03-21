@@ -7,7 +7,7 @@ export class Seq {
   /**
    * creates instance of Seq
    * @param  {array} values - accepts array of values
-   * @return {Seq}        [description]
+   * @return {Seq}
    */
   constructor(values) {
     if (!Array.isArray(values)) throw Error('Provide valid array');

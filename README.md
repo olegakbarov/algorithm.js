@@ -1,10 +1,10 @@
 # Computer Science in JavaScript
 
-This repo is attempt to refresh my knowledge in CS basics by reimplementing basic algorithms and data scructures.
+This repo is attempt to refresh my knowledge of CS basics by reimplementing basic algorithms and data scructures. I'll try to keep test and doc coverage above 90%, but you're always welcome to help me.
 
 ### Project roadmap
 
-Here's the things i'd like to bring here. Though plans may change 😁
+Here's the things i'd like to bring here (though plans may change 😁)
 
 #### Algorithms
 
@@ -15,11 +15,13 @@ Here's the things i'd like to bring here. Though plans may change 😁
 #### Data Structures
 
 - [x] List
+- [x] Seq
+- [x] Stack
 - [ ] Linked list
-- [ ] Seq
-- [ ] Stack
+- [ ] Doubly linked list
 - [ ] Set
 - [ ] Map
+- [ ] Graph
 
 #### Functional stuff
 
