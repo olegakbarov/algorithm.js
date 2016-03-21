@@ -30,8 +30,8 @@ export function factorial(n) {
     stack.add(n--);
   }
 
-  while(stack.size() > 0) {
-    res *= stack.next()
+  while (stack.size() > 0) {
+    res *= stack.next();
   }
 
   return res;
@@ -50,13 +50,13 @@ export function parensValidator(str) {
   for (let i = 0; i < str.length; i++) {
     if (str[i] === ')' && !flag) {
       return false;
-    } else if (str[i] == '(') {
+    } else if (str[i] === '(') {
       flag = true;
       stack.add(i);
-    } else if (str[i] == ')') {
+    } else if (str[i] === ')') {
       stack.next();
     }
   }
 
-  return stack.size() % 2 === 0
+  return stack.size() % 2 === 0;
 }

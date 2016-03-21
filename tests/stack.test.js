@@ -49,7 +49,6 @@ test('[stack] methods & examples', assert => {
   let lisp = '(defn fib [n] (if (= n 1) 1 (fac (- n 1))))';
   assert.ok(parensValidator(lisp), msg);
 
-
   msg = ' not a valid LISP';
   lisp = ')defn fib [n] (if (= n 1) 1 (fac (- n 1))))';
   assert.notOk(parensValidator(lisp), msg);

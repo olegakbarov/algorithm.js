@@ -48,7 +48,7 @@ export class Stack {
      */
     this.size = () => {
       return store.length;
-    }
+    };
 
     /**
      * serialize stack to string
