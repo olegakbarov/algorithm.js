@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "cs-in-js/src/queue/queue.js~queue",
+    "class/src/queue/queue.js~Queue.html",
+    "<span>Queue</span> <span class=\"search-result-import-path\">cs-in-js/src/queue/queue.js</span>",
+    "class"
+  ],
+  [
     "cs-in-js/src/seq.js~seq",
     "class/src/seq.js~Seq.html",
     "<span>Seq</span> <span class=\"search-result-import-path\">cs-in-js/src/seq.js</span>",
@@ -492,6 +498,48 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/queue/queue.js",
+    "file/src/queue/queue.js.html",
+    "src/queue/queue.js",
+    "file"
+  ],
+  [
+    "src/queue/queue.js~queue#cosntructor",
+    "class/src/queue/queue.js~Queue.html#instance-method-cosntructor",
+    "src/queue/queue.js~Queue#cosntructor",
+    "method"
+  ],
+  [
+    "src/queue/queue.js~queue#dequeue",
+    "class/src/queue/queue.js~Queue.html#instance-member-dequeue",
+    "src/queue/queue.js~Queue#dequeue",
+    "member"
+  ],
+  [
+    "src/queue/queue.js~queue#enqueue",
+    "class/src/queue/queue.js~Queue.html#instance-member-enqueue",
+    "src/queue/queue.js~Queue#enqueue",
+    "member"
+  ],
+  [
+    "src/queue/queue.js~queue#head",
+    "class/src/queue/queue.js~Queue.html#instance-member-head",
+    "src/queue/queue.js~Queue#head",
+    "member"
+  ],
+  [
+    "src/queue/queue.js~queue#tail",
+    "class/src/queue/queue.js~Queue.html#instance-member-tail",
+    "src/queue/queue.js~Queue#tail",
+    "member"
+  ],
+  [
+    "src/queue/queue.js~queue#tostring",
+    "class/src/queue/queue.js~Queue.html#instance-member-toString",
+    "src/queue/queue.js~Queue#toString",
+    "member"
+  ],
+  [
     "src/seq.js",
     "file/src/seq.js.html",
     "src/seq.js",
@@ -505,13 +553,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-get-current",
+    "class/src/seq.js~Seq.html#instance-set-current",
     "src/seq.js~Seq#current",
     "member"
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-set-current",
+    "class/src/seq.js~Seq.html#instance-get-current",
     "src/seq.js~Seq#current",
     "member"
   ],

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">Stack | API Document</title>
+  <title data-ice="title">Queue | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -49,17 +49,17 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Stack} from &apos;<span><a href="file/src/stack/stack.js.html#lineNumber4">cs-in-js/src/stack/stack.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Queue} from &apos;<span><a href="file/src/queue/queue.js.html#lineNumber4">cs-in-js/src/queue/queue.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/stack/stack.js.html#lineNumber4">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/queue/queue.js.html#lineNumber4">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">Stack</h1>
+  <h1 data-ice="name">Queue</h1>
 
   
 
@@ -75,7 +75,7 @@
 
   
   
-  <div class="description" data-ice="description"><p>Stack, aka &quot;last-in, first-out (LIFO) data structure&quot;</p>
+  <div class="description" data-ice="description"><p>A queue is aa first-in, first-out (FIFO) data structure</p>
 </div>
 
   
@@ -89,39 +89,7 @@
 
 
 
-<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">: <span>stack</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>creates empty stack instance</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
+
 <div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
   <tbody>
@@ -137,13 +105,13 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-member-add">add</a></span></span><span data-ice="signature">(el: <span>any</span>): <span>void</span>: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-member-dequeue">dequeue</a></span></span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>add item on top of stack</p>
+        <div data-ice="description"><p>return item from the head of queue</p>
 </div>
       </div>
     </td>
@@ -163,13 +131,13 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-member-next">next</a></span></span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-member-enqueue">enqueue</a></span></span><span data-ice="signature">(el: <span>any</span>): <span>void</span>: <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>return top item of the stack</p>
+        <div data-ice="description"><p>add item to tail of queue</p>
 </div>
       </div>
     </td>
@@ -189,13 +157,13 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-member-peek">peek</a></span></span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-member-head">head</a></span></span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>peek returns last item without removing it</p>
+        <div data-ice="description"><p>first item in queue</p>
 </div>
       </div>
     </td>
@@ -215,13 +183,13 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-member-size">size</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-member-tail">tail</a></span></span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>size of stack</p>
+        <div data-ice="description"><p>last item of queue</p>
 </div>
       </div>
     </td>
@@ -241,13 +209,46 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html#instance-member-toString">toString</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-member-toString">toString</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>: <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>serialize stack to string</p>
+        <div data-ice="description"><p>string representation the contents of queue</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="class/src/queue/queue.js~Queue.html#instance-method-cosntructor">cosntructor</a></span></span><span data-ice="signature">(): <span>queue</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>creates instance of queue</p>
 </div>
       </div>
     </td>
@@ -265,27 +266,27 @@
 
 
 
-<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-constructor-constructor">
+  <h3 data-ice="anchor" id="instance-member-dequeue">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">: <span>stack</span></span>
+    <span data-ice="name">dequeue</span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber9">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>creates empty stack instance</p>
+  <div data-ice="description"><p>return item from the head of queue</p>
 </div>
 
   
@@ -297,7 +298,7 @@
     <h4>Return:</h4>
     <table>
       <tr>
-        <td class="return-type" data-ice="returnType"><span>stack</span></td>
+        <td class="return-type" data-ice="returnType"><span>any</span></td>
         
       </tr>
     </table>
@@ -318,28 +319,25 @@
   
   
 </div>
-</div>
-<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
-
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-add">
+  <h3 data-ice="anchor" id="instance-member-enqueue">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">add</span><span data-ice="signature">(el: <span>any</span>): <span>void</span>: <span>*</span></span>
+    <span data-ice="name">enqueue</span><span data-ice="signature">(el: <span>any</span>): <span>void</span>: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber17">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>add item on top of stack</p>
+  <div data-ice="description"><p>add item to tail of queue</p>
 </div>
 
   
@@ -373,24 +371,24 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-next">
+  <h3 data-ice="anchor" id="instance-member-head">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">next</span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
+    <span data-ice="name">head</span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>return top item of the stack</p>
+  <div data-ice="description"><p>first item in queue</p>
 </div>
 
   
@@ -424,24 +422,24 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-peek">
+  <h3 data-ice="anchor" id="instance-member-tail">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">peek</span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
+    <span data-ice="name">tail</span><span data-ice="signature">: <span>any</span>: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber41">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber49">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>peek returns last item without removing it</p>
+  <div data-ice="description"><p>last item of queue</p>
 </div>
 
   
@@ -454,57 +452,6 @@
     <table>
       <tr>
         <td class="return-type" data-ice="returnType"><span>any</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-size">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">size</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber49">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>size of stack</p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
         
       </tr>
     </table>
@@ -536,14 +483,14 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/stack/stack.js.html#lineNumber57">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber33">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>serialize stack to string</p>
+  <div data-ice="description"><p>string representation the contents of queue</p>
 </div>
 
   
@@ -577,7 +524,60 @@
   
 </div>
 </div>
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-cosntructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">cosntructor</span><span data-ice="signature">(): <span>queue</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/queue/queue.js.html#lineNumber9">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>creates instance of queue</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span>queue</span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
 </div>
 
 <footer class="footer">
