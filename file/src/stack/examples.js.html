@@ -40,6 +40,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">list</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/list/list.js~List.html">List</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">stack</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html">Stack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-factorial">factorial</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parensValidator">parensValidator</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toBase">toBase</a></span></span></li>
 </ul>
 </div>
@@ -62,9 +64,52 @@ export function toBase(n, base) {
     n = Math.floor(n /= base);
   }
 
-  return stack;
+  return stack.toString().replace(/,/g, &apos;&apos;);
 }
-</code></pre>
+
+/**
+ * factorial of given number using stack
+ * @param  {number} n
+ * @return {number}
+ */
+export function factorial(n) {
+  let res = 1;
+  let stack = new Stack();
+
+  while (n &gt; 0) {
+    stack.add(n--);
+  }
+
+  while (stack.size() &gt; 0) {
+    res *= stack.next();
+  }
+
+  return res;
+}
+
+/**
+ * Validates the number of parens (it should be even) and begin with &apos;(&apos;
+ * @param  {string} str
+ * @return {boolean}
+ */
+export function parensValidator(str) {
+  let stack = new Stack();
+  // indicates closing parens
+  let flag = false;
+
+  for (let i = 0; i &lt; str.length; i++) {
+    if (str[i] === &apos;)&apos; &amp;&amp; !flag) {
+      return false;
+    } else if (str[i] === &apos;(&apos;) {
+      flag = true;
+      stack.add(i);
+    } else if (str[i] === &apos;)&apos;) {
+      stack.next();
+    }
+  }
+
+  return stack.size() % 2 === 0;
+}</code></pre>
 
 </div>
 

@@ -909,7 +909,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { Stack } from './stack.js';\n\n/**\n * convert number to base\n * @param  {number} n - a number to convert\n * @param  {number} base - a base to convert to\n * @return {stack}\n */\nexport function toBase(n, base) {\n  let stack = new Stack();\n\n  while (n > 0) {\n    stack.add(n % base);\n    n = Math.floor(n /= base);\n  }\n\n  return stack;\n}\n"
+    "content": "import { Stack } from './stack.js';\n\n/**\n * convert number to base\n * @param  {number} n - a number to convert\n * @param  {number} base - a base to convert to\n * @return {stack}\n */\nexport function toBase(n, base) {\n  let stack = new Stack();\n\n  while (n > 0) {\n    stack.add(n % base);\n    n = Math.floor(n /= base);\n  }\n\n  return stack.toString().replace(/,/g, '');\n}\n\n/**\n * factorial of given number using stack\n * @param  {number} n\n * @return {number}\n */\nexport function factorial(n) {\n  let res = 1;\n  let stack = new Stack();\n\n  while (n > 0) {\n    stack.add(n--);\n  }\n\n  while (stack.size() > 0) {\n    res *= stack.next();\n  }\n\n  return res;\n}\n\n/**\n * Validates the number of parens (it should be even) and begin with '('\n * @param  {string} str\n * @return {boolean}\n */\nexport function parensValidator(str) {\n  let stack = new Stack();\n  // indicates closing parens\n  let flag = false;\n\n  for (let i = 0; i < str.length; i++) {\n    if (str[i] === ')' && !flag) {\n      return false;\n    } else if (str[i] === '(') {\n      flag = true;\n      stack.add(i);\n    } else if (str[i] === ')') {\n      stack.next();\n    }\n  }\n\n  return stack.size() % 2 === 0;\n}"
   },
   {
     "__docId__": 35,
@@ -959,6 +959,78 @@
   },
   {
     "__docId__": 36,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "factorial",
+    "memberof": "src/stack/examples.js",
+    "longname": "src/stack/examples.js~factorial",
+    "access": null,
+    "export": true,
+    "importPath": "cs-in-js/src/stack/examples.js",
+    "importStyle": "{factorial}",
+    "description": "factorial of given number using stack",
+    "lineNumber": 25,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "n",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 37,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "parensValidator",
+    "memberof": "src/stack/examples.js",
+    "longname": "src/stack/examples.js~parensValidator",
+    "access": null,
+    "export": true,
+    "importPath": "cs-in-js/src/stack/examples.js",
+    "importStyle": "{parensValidator}",
+    "description": "Validates the number of parens (it should be even) and begin with '('",
+    "lineNumber": 45,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "str",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 38,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -968,10 +1040,10 @@
     "access": null,
     "description": null,
     "lineNumber": 4,
-    "content": "/**\n * Stack, aka \"last-in, first-out (LIFO) data structure\"\n */\nexport class Stack {\n  /**\n   * creates empty stack instance\n   * @return {stack}\n   */\n  constructor() {\n    /**\n     * private storage of the stack re\n     * @type {Array}\n     */\n    let store = [];\n\n    /**\n     * add item on top of stack\n     * @param  {any} el\n     * @return {void}\n     */\n    this.add = el => {\n      store.push(el);\n    };\n\n    /**\n     * return top item of the stack\n     * @return {any}\n     */\n    this.next = () => {\n      if (store.length > 0) {\n        return store.pop();\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * peek returns last item without removing it\n     * @return {any}\n     */\n    this.peek = () => {\n      return store[store.length - 1];\n    };\n\n    /**\n     * serialize stack to string\n     * @return {string}\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n  }\n}"
+    "content": "/**\n * Stack, aka \"last-in, first-out (LIFO) data structure\"\n */\nexport class Stack {\n  /**\n   * creates empty stack instance\n   * @return {stack}\n   */\n  constructor() {\n    /**\n     * private storage of the stack re\n     * @type {Array}\n     */\n    let store = [];\n\n    /**\n     * add item on top of stack\n     * @param  {any} el\n     * @return {void}\n     */\n    this.add = el => {\n      store.push(el);\n    };\n\n    /**\n     * return top item of the stack\n     * @return {any}\n     */\n    this.next = () => {\n      if (store.length > 0) {\n        return store.pop();\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * peek returns last item without removing it\n     * @return {any}\n     */\n    this.peek = () => {\n      return store[store.length - 1];\n    };\n\n    /**\n     * size of stack\n     * @return {number}\n     */\n    this.size = () => {\n      return store.length;\n    };\n\n    /**\n     * serialize stack to string\n     * @return {string}\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n  }\n}"
   },
   {
-    "__docId__": 37,
+    "__docId__": 39,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -987,7 +1059,7 @@
     "interface": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 40,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1009,7 +1081,7 @@
     "generator": false
   },
   {
-    "__docId__": 39,
+    "__docId__": 41,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1046,7 +1118,7 @@
     }
   },
   {
-    "__docId__": 40,
+    "__docId__": 42,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1071,7 +1143,7 @@
     }
   },
   {
-    "__docId__": 41,
+    "__docId__": 43,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1096,7 +1168,32 @@
     }
   },
   {
-    "__docId__": 42,
+    "__docId__": 44,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "size",
+    "memberof": "src/stack/stack.js~Stack",
+    "longname": "src/stack/stack.js~Stack#size",
+    "access": null,
+    "description": "size of stack",
+    "lineNumber": 49,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 45,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1105,7 +1202,7 @@
     "longname": "src/stack/stack.js~Stack#toString",
     "access": null,
     "description": "serialize stack to string",
-    "lineNumber": 49,
+    "lineNumber": 57,
     "return": {
       "nullable": null,
       "types": [
@@ -1121,7 +1218,7 @@
     }
   },
   {
-    "__docId__": 44,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1134,7 +1231,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1147,7 +1244,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1160,7 +1257,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1173,7 +1270,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1186,7 +1283,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1199,7 +1296,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1212,7 +1309,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1225,7 +1322,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1238,7 +1335,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1251,7 +1348,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1264,7 +1361,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1277,7 +1374,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1290,7 +1387,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1303,7 +1400,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1316,7 +1413,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1329,7 +1426,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1342,7 +1439,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1355,7 +1452,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1368,7 +1465,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1381,7 +1478,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1394,7 +1491,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1407,7 +1504,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1420,7 +1517,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1433,7 +1530,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1446,7 +1543,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1459,7 +1556,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1472,7 +1569,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1485,7 +1582,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1498,7 +1595,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1511,7 +1608,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1524,7 +1621,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1537,7 +1634,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1550,7 +1647,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1563,7 +1660,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1576,7 +1673,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1589,7 +1686,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1602,7 +1699,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1615,7 +1712,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1628,7 +1725,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1641,7 +1738,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1654,7 +1751,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1667,7 +1764,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1680,7 +1777,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1693,7 +1790,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1706,7 +1803,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1719,7 +1816,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1732,7 +1829,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1745,7 +1842,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1758,7 +1855,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1771,7 +1868,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1784,7 +1881,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1797,7 +1894,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1810,7 +1907,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1823,7 +1920,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,

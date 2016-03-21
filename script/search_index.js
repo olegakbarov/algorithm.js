@@ -30,6 +30,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "cs-in-js/src/stack/examples.js~factorial",
+    "function/index.html#static-function-factorial",
+    "<span>factorial</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
+    "function"
+  ],
+  [
     "cs-in-js/src/array/mergesort.js~merge",
     "function/index.html#static-function-merge",
     "<span>merge</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
@@ -39,6 +45,12 @@ window.esdocSearchIndex = [
     "cs-in-js/src/array/mergesort.js~mergesort",
     "function/index.html#static-function-mergeSort",
     "<span>mergeSort</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
+    "function"
+  ],
+  [
+    "cs-in-js/src/stack/examples.js~parensvalidator",
+    "function/index.html#static-function-parensValidator",
+    "<span>parensValidator</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
     "function"
   ],
   [
@@ -567,6 +579,12 @@ window.esdocSearchIndex = [
     "src/stack/stack.js~stack#peek",
     "class/src/stack/stack.js~Stack.html#instance-member-peek",
     "src/stack/stack.js~Stack#peek",
+    "member"
+  ],
+  [
+    "src/stack/stack.js~stack#size",
+    "class/src/stack/stack.js~Stack.html#instance-member-size",
+    "src/stack/stack.js~Stack#size",
     "member"
   ],
   [
