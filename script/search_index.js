@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "cs-in-js/src/stack/stack.js~stack",
+    "class/src/stack/stack.js~Stack.html",
+    "<span>Stack</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/stack.js</span>",
+    "class"
+  ],
+  [
     "cs-in-js/src/obj-utils.js~cloneobject",
     "function/index.html#static-function-cloneObject",
     "<span>cloneObject</span> <span class=\"search-result-import-path\">cs-in-js/src/obj-utils.js</span>",
@@ -39,6 +45,12 @@ window.esdocSearchIndex = [
     "cs-in-js/src/array/utils.js~shuffle",
     "function/index.html#static-function-shuffle",
     "<span>shuffle</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
+    "function"
+  ],
+  [
+    "cs-in-js/src/stack/examples.js~tobase",
+    "function/index.html#static-function-toBase",
+    "<span>toBase</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
     "function"
   ],
   [
@@ -390,10 +402,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/list/list.js~list#clear",
+    "class/src/list/list.js~List.html#instance-member-clear",
+    "src/list/list.js~List#clear",
+    "member"
+  ],
+  [
     "src/list/list.js~list#constructor",
     "class/src/list/list.js~List.html#instance-constructor-constructor",
     "src/list/list.js~List#constructor",
     "method"
+  ],
+  [
+    "src/list/list.js~list#contains",
+    "class/src/list/list.js~List.html#instance-member-contains",
+    "src/list/list.js~List#contains",
+    "member"
   ],
   [
     "src/list/list.js~list#current",
@@ -402,9 +426,21 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/list/list.js~list#end",
+    "class/src/list/list.js~List.html#instance-member-end",
+    "src/list/list.js~List#end",
+    "member"
+  ],
+  [
     "src/list/list.js~list#find",
     "class/src/list/list.js~List.html#instance-member-find",
     "src/list/list.js~List#find",
+    "member"
+  ],
+  [
+    "src/list/list.js~list#front",
+    "class/src/list/list.js~List.html#instance-member-front",
+    "src/list/list.js~List#front",
     "member"
   ],
   [
@@ -417,6 +453,12 @@ window.esdocSearchIndex = [
     "src/list/list.js~list#next",
     "class/src/list/list.js~List.html#instance-member-next",
     "src/list/list.js~List#next",
+    "member"
+  ],
+  [
+    "src/list/list.js~list#prev",
+    "class/src/list/list.js~List.html#instance-member-prev",
+    "src/list/list.js~List#prev",
     "member"
   ],
   [
@@ -489,6 +531,48 @@ window.esdocSearchIndex = [
     "src/seq.js~seq#values",
     "class/src/seq.js~Seq.html#instance-member-values",
     "src/seq.js~Seq#values",
+    "member"
+  ],
+  [
+    "src/stack/examples.js",
+    "file/src/stack/examples.js.html",
+    "src/stack/examples.js",
+    "file"
+  ],
+  [
+    "src/stack/stack.js",
+    "file/src/stack/stack.js.html",
+    "src/stack/stack.js",
+    "file"
+  ],
+  [
+    "src/stack/stack.js~stack#add",
+    "class/src/stack/stack.js~Stack.html#instance-member-add",
+    "src/stack/stack.js~Stack#add",
+    "member"
+  ],
+  [
+    "src/stack/stack.js~stack#constructor",
+    "class/src/stack/stack.js~Stack.html#instance-constructor-constructor",
+    "src/stack/stack.js~Stack#constructor",
+    "method"
+  ],
+  [
+    "src/stack/stack.js~stack#next",
+    "class/src/stack/stack.js~Stack.html#instance-member-next",
+    "src/stack/stack.js~Stack#next",
+    "member"
+  ],
+  [
+    "src/stack/stack.js~stack#peek",
+    "class/src/stack/stack.js~Stack.html#instance-member-peek",
+    "src/stack/stack.js~Stack#peek",
+    "member"
+  ],
+  [
+    "src/stack/stack.js~stack#tostring",
+    "class/src/stack/stack.js~Stack.html#instance-member-toString",
+    "src/stack/stack.js~Stack#toString",
     "member"
   ]
 ]

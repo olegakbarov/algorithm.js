@@ -1,11 +1,11 @@
 {
-  "coverage": "95.45%",
-  "expectCount": 22,
-  "actualCount": 21,
+  "coverage": "97.05%",
+  "expectCount": 34,
+  "actualCount": 33,
   "files": {
     "src/list/list.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 13,
+      "actualCount": 13,
       "undocumentLines": []
     },
     "src/seq.js": {
@@ -14,6 +14,11 @@
       "undocumentLines": [
         14
       ]
+    },
+    "src/stack/stack.js": {
+      "expectCount": 6,
+      "actualCount": 6,
+      "undocumentLines": []
     },
     "src/obj-utils.js": {
       "expectCount": 1,
@@ -28,6 +33,11 @@
     "src/array/mergeSort.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/stack/examples.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     }
   }

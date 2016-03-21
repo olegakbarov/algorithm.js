@@ -39,6 +39,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createMatrix">createMatrix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-shuffle">shuffle</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">list</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/list/list.js~List.html">List</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">stack</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/stack/stack.js~Stack.html">Stack</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-toBase">toBase</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -91,6 +93,29 @@ export class List {
     };
 
     /**
+     * @return {Number}
+     */
+    this.prev = () =&gt; {
+      return store[++index];
+    };
+
+    /**
+     * set the index to the first element of list
+     * @return {void}
+     */
+    this.front = () =&gt; {
+      index = 0;
+    };
+
+    /**
+     * set the index to the last element of list
+     * @return {void}
+     */
+    this.end = () =&gt; {
+      index = store.length - 1;
+    };
+
+    /**
      * @param {any} el - element to be inserted
      * @param {number} ix - index to append element to
      */
@@ -124,6 +149,24 @@ export class List {
       } else {
         return false;
       }
+    };
+
+    /**
+     * checks in item exists in list
+     * @param  {any} el - item to check
+     * @return {boolean}
+     */
+    this.contains = el =&gt; {
+      // TODO reimplemet with .deepEqual()
+      return store.indexOf(el) &gt; 0;
+    };
+
+    /**
+     * clear list instance
+     * @return {void}
+     */
+    this.clear = () =&gt; {
+      store = [];
     };
   }
 }</code></pre>
