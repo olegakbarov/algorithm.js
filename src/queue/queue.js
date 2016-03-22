@@ -1,13 +1,13 @@
 /**
- * A queue is aa first-in, first-out (FIFO) data structure
+ * A queue is a first-in, first-out (FIFO) data structure
  */
 export class Queue {
   /**
    * creates instance of queue
    * @return {queue}
    */
-  cosntructor() {
-    store = [];
+  constructor() {
+    let store = [];
 
     /**
      * add item to tail of queue
@@ -48,6 +48,14 @@ export class Queue {
      */
     this.tail = () => {
       return store[store.length];
+    };
+
+    /**
+     * returns true if no items persists in store
+     * @return {boolean}
+     */
+    this.empty = () => {
+      return store.length === 0;
     };
   }
 }
