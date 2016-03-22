@@ -210,7 +210,7 @@
     "access": null,
     "description": null,
     "lineNumber": 5,
-    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    /**\n     * @private store\n     * @type {array}\n     */\n    let store = items;\n\n    /**\n     * we store current element index in this variable\n     * @private index\n     * @type {number}\n     */\n    let index = 0;\n\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * @return {Number} return index of current item\n     */\n    this.current = () => {\n      return store[index];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.next = () => {\n      return store[index++];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.prev = () => {\n      return store[++index];\n    };\n\n    /**\n     * set the index to the first element of list\n     * @return {void}\n     */\n    this.front = () => {\n      index = 0;\n    };\n\n    /**\n     * set the index to the last element of list\n     * @return {void}\n     */\n    this.end = () => {\n      index = store.length - 1;\n    };\n\n    /**\n     * @param {any} el - element to be inserted\n     * @param {number} ix - index to append element to\n     */\n    this.insert = (el, ix) => {\n      store.splice(ix - 1, 1, el);\n    };\n\n    /**\n     * @param {any} el - finds and returns element if it exists in the list\n     * @return {Number} returns index of provided element\n     */\n    this.find = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        return store[ix];\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * @param {any} el - remove element if it exists in the list\n     * @return {Number} returns index of removed element\n     */\n    this.remove = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        store.splice(ix, 1);\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * checks in item exists in list\n     * @param  {any} el - item to check\n     * @return {boolean}\n     */\n    this.contains = el => {\n      // TODO reimplemet with .deepEqual()\n      return store.indexOf(el) > 0;\n    };\n\n    /**\n     * clear list instance\n     * @return {void}\n     */\n    this.clear = () => {\n      store = [];\n    };\n  }\n}"
+    "content": "/**\n * List data structure.\n * let list = new List([1,2,3])\n */\nexport class List {\n  /**\n   * creates instance of list\n   * @param  {array} items - array of items to be place into the list\n   * @return {List}\n   */\n  constructor(items) {\n    if (!Array.isArray(items)) throw Error('Provide a valid array');\n\n    /**\n     * @private store\n     * @type {array}\n     */\n    let store = items;\n\n    /**\n     * we store current element index in this variable\n     * @private index\n     * @type {number}\n     */\n    let index = 0;\n\n    /**\n     * @return {String} returns stringified representation\n     * of the content of list\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * @return {Number} return index of current item\n     */\n    this.current = () => {\n      return store[index];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.next = () => {\n      return store[index++];\n    };\n\n    /**\n     * @return {Number}\n     */\n    this.prev = () => {\n      return store[++index];\n    };\n\n    /**\n     * set the index to the first element of list\n     * @return {void}\n     */\n    this.front = () => {\n      index = 0;\n    };\n\n    /**\n     * set the index to the last element of list\n     * @return {void}\n     */\n    this.end = () => {\n      index = store.length - 1;\n    };\n\n    /**\n     * @param {any} el - element to be inserted\n     * @param {number} ix - index to append element to\n     */\n    this.insert = (el, ix) => {\n      store.splice(ix - 1, 1, el);\n    };\n\n    /**\n     * @param {any} el - finds and returns element if it exists in the list\n     * @return {Number} returns index of provided element\n     */\n    this.find = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        return store[ix];\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * @param {any} el - remove element if it exists in the list\n     * @return {Number} returns index of removed element\n     */\n    this.remove = el => {\n      let ix = store.indexOf(el);\n\n      if (ix > 0) {\n        store.splice(ix, 1);\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * checks in item exists in list\n     * @param  {any} el - item to check\n     * @return {boolean}\n     */\n    this.contains = el => {\n      // TODO reimplemet with .deepEqual()\n      return store.indexOf(el) > 0;\n    };\n\n    /**\n     * clear list instance\n     * @return {void}\n     */\n    this.clear = () => {\n      store = [];\n    };\n  }\n}"
   },
   {
     "__docId__": 7,
@@ -271,7 +271,7 @@
     "longname": "src/list/list.js~List#toString",
     "access": null,
     "description": "",
-    "lineNumber": 29,
+    "lineNumber": 31,
     "return": {
       "nullable": null,
       "types": [
@@ -296,7 +296,7 @@
     "longname": "src/list/list.js~List#current",
     "access": null,
     "description": "",
-    "lineNumber": 36,
+    "lineNumber": 38,
     "return": {
       "nullable": null,
       "types": [
@@ -321,7 +321,7 @@
     "longname": "src/list/list.js~List#next",
     "access": null,
     "description": "",
-    "lineNumber": 43,
+    "lineNumber": 45,
     "return": {
       "nullable": null,
       "types": [
@@ -346,7 +346,7 @@
     "longname": "src/list/list.js~List#prev",
     "access": null,
     "description": "",
-    "lineNumber": 50,
+    "lineNumber": 52,
     "return": {
       "nullable": null,
       "types": [
@@ -371,7 +371,7 @@
     "longname": "src/list/list.js~List#front",
     "access": null,
     "description": "set the index to the first element of list",
-    "lineNumber": 58,
+    "lineNumber": 60,
     "return": {
       "nullable": null,
       "types": [
@@ -396,7 +396,7 @@
     "longname": "src/list/list.js~List#end",
     "access": null,
     "description": "set the index to the last element of list",
-    "lineNumber": 66,
+    "lineNumber": 68,
     "return": {
       "nullable": null,
       "types": [
@@ -421,7 +421,7 @@
     "longname": "src/list/list.js~List#insert",
     "access": null,
     "description": "",
-    "lineNumber": 74,
+    "lineNumber": 76,
     "params": [
       {
         "nullable": null,
@@ -460,7 +460,7 @@
     "longname": "src/list/list.js~List#find",
     "access": null,
     "description": "",
-    "lineNumber": 82,
+    "lineNumber": 84,
     "params": [
       {
         "nullable": null,
@@ -497,7 +497,7 @@
     "longname": "src/list/list.js~List#remove",
     "access": null,
     "description": "",
-    "lineNumber": 96,
+    "lineNumber": 98,
     "params": [
       {
         "nullable": null,
@@ -534,7 +534,7 @@
     "longname": "src/list/list.js~List#contains",
     "access": null,
     "description": "checks in item exists in list",
-    "lineNumber": 111,
+    "lineNumber": 113,
     "params": [
       {
         "nullable": null,
@@ -571,7 +571,7 @@
     "longname": "src/list/list.js~List#clear",
     "access": null,
     "description": "clear list instance",
-    "lineNumber": 120,
+    "lineNumber": 122,
     "return": {
       "nullable": null,
       "types": [
@@ -646,7 +646,7 @@
     "access": null,
     "description": null,
     "lineNumber": 4,
-    "content": "/**\n * A queue is aa first-in, first-out (FIFO) data structure\n */\nexport class Queue {\n  /**\n   * creates instance of queue\n   * @return {queue}\n   */\n  cosntructor() {\n    let store = [];\n\n    /**\n     * add item to tail of queue\n     * @param  {any} el\n     * @return {void}\n     */\n    this.enqueue = el => {\n      store.push(el);\n    };\n\n    /**\n     * return item from the head of queue\n     * @return {any}\n     */\n    this.dequeue  = () => {\n      return store.shift();\n    };\n\n    /**\n     * string representation the contents of queue\n     * @return {string}\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * first item in queue\n     * @return {any}\n     */\n    this.head = () => {\n      return store[0];\n    };\n\n    /**\n     * last item of queue\n     * @return {any}\n     */\n    this.tail = () => {\n      return store[store.length];\n    };\n  }\n}"
+    "content": "/**\n * A queue is a first-in, first-out (FIFO) data structure\n */\nexport class Queue {\n  /**\n   * creates instance of queue\n   * @return {queue}\n   */\n  constructor() {\n    let store = [];\n\n    /**\n     * add item to tail of queue\n     * @param  {any} el\n     * @return {void}\n     */\n    this.enqueue = el => {\n      store.push(el);\n    };\n\n    /**\n     * return item from the head of queue\n     * @return {any}\n     */\n    this.dequeue  = () => {\n      return store.shift();\n    };\n\n    /**\n     * string representation the contents of queue\n     * @return {string}\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n\n    /**\n     * first item in queue\n     * @return {any}\n     */\n    this.head = () => {\n      return store[0];\n    };\n\n    /**\n     * last item of queue\n     * @return {any}\n     */\n    this.tail = () => {\n      return store[store.length];\n    };\n\n    /**\n     * returns true if no items persists in store\n     * @return {boolean}\n     */\n    this.empty = () => {\n      return store.length === 0;\n    };\n  }\n}\n"
   },
   {
     "__docId__": 23,
@@ -660,18 +660,18 @@
     "export": true,
     "importPath": "cs-in-js/src/queue/queue.js",
     "importStyle": "{Queue}",
-    "description": "A queue is aa first-in, first-out (FIFO) data structure",
+    "description": "A queue is a first-in, first-out (FIFO) data structure",
     "lineNumber": 4,
     "interface": false
   },
   {
     "__docId__": 24,
-    "kind": "method",
+    "kind": "constructor",
     "static": false,
     "variation": null,
-    "name": "cosntructor",
+    "name": "constructor",
     "memberof": "src/queue/queue.js~Queue",
-    "longname": "src/queue/queue.js~Queue#cosntructor",
+    "longname": "src/queue/queue.js~Queue#constructor",
     "access": null,
     "description": "creates instance of queue",
     "lineNumber": 9,
@@ -825,6 +825,31 @@
   },
   {
     "__docId__": 30,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "empty",
+    "memberof": "src/queue/queue.js~Queue",
+    "longname": "src/queue/queue.js~Queue#empty",
+    "access": null,
+    "description": "returns true if no items persists in store",
+    "lineNumber": 57,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 31,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -837,7 +862,7 @@
     "content": "'use strict';\n\n/**\n * Seq represents a possibly endless sequence of entities\n */\nexport class Seq {\n  /**\n   * creates instance of Seq\n   * @param  {array} values - accepts array of values\n   * @return {Seq}\n   */\n  constructor(values) {\n    if (!Array.isArray(values)) throw Error('Provide valid array');\n    this.values = values;\n    this._index = 0;\n  }\n\n  /**\n   * @return {Any} item of sequence with current index\n   */\n  get current() {\n    return this.values[this._index];\n  }\n\n  /**\n   * @return {Number} Sets current item to @param\n   */\n  set current(val) {\n    this._index = val;\n  }\n\n  /**\n   * @return {Any}\n   */\n  next() {\n    return this.values[++this._index];\n  }\n\n  /**\n   * @return {Any}\n   */\n  first() {\n    return this.values[0];\n  }\n\n  /**\n   * @return {Any}\n   */\n  last() {\n    return this.values[this.values.length - 1];\n  }\n\n  /**\n   * @return {Any}\n   */\n  nth(n) {\n    return this.values[n - 1];\n  }\n}\n"
   },
   {
-    "__docId__": 31,
+    "__docId__": 32,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -853,7 +878,7 @@
     "interface": false
   },
   {
-    "__docId__": 32,
+    "__docId__": 33,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -886,7 +911,7 @@
     "generator": false
   },
   {
-    "__docId__": 33,
+    "__docId__": 34,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -904,7 +929,7 @@
     }
   },
   {
-    "__docId__": 34,
+    "__docId__": 35,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -922,7 +947,7 @@
     }
   },
   {
-    "__docId__": 35,
+    "__docId__": 36,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -948,7 +973,7 @@
     "generator": false
   },
   {
-    "__docId__": 36,
+    "__docId__": 37,
     "kind": "set",
     "static": false,
     "variation": null,
@@ -974,7 +999,7 @@
     "generator": false
   },
   {
-    "__docId__": 37,
+    "__docId__": 38,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -992,7 +1017,7 @@
     }
   },
   {
-    "__docId__": 38,
+    "__docId__": 39,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1014,7 +1039,7 @@
     "generator": false
   },
   {
-    "__docId__": 39,
+    "__docId__": 40,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1036,7 +1061,7 @@
     "generator": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 41,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1058,7 +1083,7 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 42,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1087,7 +1112,7 @@
     "generator": false
   },
   {
-    "__docId__": 42,
+    "__docId__": 43,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1100,7 +1125,7 @@
     "content": "import { Stack } from './stack.js';\n\n/**\n * convert number to base\n * @param  {number} n - a number to convert\n * @param  {number} base - a base to convert to\n * @return {stack}\n */\nexport function toBase(n, base) {\n  let stack = new Stack();\n\n  while (n > 0) {\n    stack.add(n % base);\n    n = Math.floor(n /= base);\n  }\n\n  return stack.toString().replace(/,/g, '');\n}\n\n/**\n * factorial of given number using stack\n * @param  {number} n\n * @return {number}\n */\nexport function factorial(n) {\n  let res = 1;\n  let stack = new Stack();\n\n  while (n > 0) {\n    stack.add(n--);\n  }\n\n  while (stack.size() > 0) {\n    res *= stack.next();\n  }\n\n  return res;\n}\n\n/**\n * Validates the number of parens (it should be even) and begin with '('\n * @param  {string} str\n * @return {boolean}\n */\nexport function parensValidator(str) {\n  let stack = new Stack();\n  // indicates closing parens\n  let flag = false;\n\n  for (let i = 0; i < str.length; i++) {\n    if (str[i] === ')' && !flag) {\n      return false;\n    } else if (str[i] === '(') {\n      flag = true;\n      stack.add(i);\n    } else if (str[i] === ')') {\n      stack.next();\n    }\n  }\n\n  return stack.size() % 2 === 0;\n}"
   },
   {
-    "__docId__": 43,
+    "__docId__": 44,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1146,7 +1171,7 @@
     "generator": false
   },
   {
-    "__docId__": 44,
+    "__docId__": 45,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1182,7 +1207,7 @@
     "generator": false
   },
   {
-    "__docId__": 45,
+    "__docId__": 46,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1218,7 +1243,7 @@
     "generator": false
   },
   {
-    "__docId__": 46,
+    "__docId__": 47,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1231,7 +1256,7 @@
     "content": "/**\n * Stack, aka \"last-in, first-out (LIFO) data structure\"\n */\nexport class Stack {\n  /**\n   * creates empty stack instance\n   * @return {stack}\n   */\n  constructor() {\n    /**\n     * private storage of the stack re\n     * @type {Array}\n     */\n    let store = [];\n\n    /**\n     * add item on top of stack\n     * @param  {any} el\n     * @return {void}\n     */\n    this.add = el => {\n      store.push(el);\n    };\n\n    /**\n     * return top item of the stack\n     * @return {any}\n     */\n    this.next = () => {\n      if (store.length > 0) {\n        return store.pop();\n      } else {\n        return false;\n      }\n    };\n\n    /**\n     * peek returns last item without removing it\n     * @return {any}\n     */\n    this.peek = () => {\n      return store[store.length - 1];\n    };\n\n    /**\n     * size of stack\n     * @return {number}\n     */\n    this.size = () => {\n      return store.length;\n    };\n\n    /**\n     * serialize stack to string\n     * @return {string}\n     */\n    this.toString = () => {\n      return store.toString();\n    };\n  }\n}"
   },
   {
-    "__docId__": 47,
+    "__docId__": 48,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1247,7 +1272,7 @@
     "interface": false
   },
   {
-    "__docId__": 48,
+    "__docId__": 49,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1269,7 +1294,7 @@
     "generator": false
   },
   {
-    "__docId__": 49,
+    "__docId__": 50,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1306,7 +1331,7 @@
     }
   },
   {
-    "__docId__": 50,
+    "__docId__": 51,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1331,7 +1356,7 @@
     }
   },
   {
-    "__docId__": 51,
+    "__docId__": 52,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1356,7 +1381,7 @@
     }
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1381,7 +1406,7 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1406,7 +1431,7 @@
     }
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1419,7 +1444,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1432,7 +1457,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1445,7 +1470,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1458,7 +1483,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1471,7 +1496,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1484,7 +1509,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1497,7 +1522,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1510,7 +1535,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1523,7 +1548,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1536,7 +1561,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1549,7 +1574,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1562,7 +1587,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1575,7 +1600,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1588,7 +1613,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1601,7 +1626,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1614,7 +1639,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1627,7 +1652,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1640,7 +1665,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1653,7 +1678,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1666,7 +1691,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1679,7 +1704,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1692,7 +1717,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1705,7 +1730,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1718,7 +1743,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1731,7 +1756,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1744,7 +1769,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1757,7 +1782,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1770,7 +1795,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1783,7 +1808,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1796,7 +1821,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1809,7 +1834,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1822,7 +1847,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1835,7 +1860,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1848,7 +1873,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1861,7 +1886,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1874,7 +1899,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1887,7 +1912,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1900,7 +1925,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1913,7 +1938,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1926,7 +1951,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1939,7 +1964,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1952,7 +1977,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1965,7 +1990,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1978,7 +2003,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1991,7 +2016,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2004,7 +2029,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2017,7 +2042,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2030,7 +2055,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2043,7 +2068,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2056,7 +2081,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2069,7 +2094,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2082,7 +2107,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2095,7 +2120,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2108,7 +2133,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,

@@ -504,15 +504,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/queue/queue.js~queue#cosntructor",
-    "class/src/queue/queue.js~Queue.html#instance-method-cosntructor",
-    "src/queue/queue.js~Queue#cosntructor",
+    "src/queue/queue.js~queue#constructor",
+    "class/src/queue/queue.js~Queue.html#instance-constructor-constructor",
+    "src/queue/queue.js~Queue#constructor",
     "method"
   ],
   [
     "src/queue/queue.js~queue#dequeue",
     "class/src/queue/queue.js~Queue.html#instance-member-dequeue",
     "src/queue/queue.js~Queue#dequeue",
+    "member"
+  ],
+  [
+    "src/queue/queue.js~queue#empty",
+    "class/src/queue/queue.js~Queue.html#instance-member-empty",
+    "src/queue/queue.js~Queue#empty",
     "member"
   ],
   [

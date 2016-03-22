@@ -50,14 +50,14 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/queue/queue.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * A queue is aa first-in, first-out (FIFO) data structure
+ * A queue is a first-in, first-out (FIFO) data structure
  */
 export class Queue {
   /**
    * creates instance of queue
    * @return {queue}
    */
-  cosntructor() {
+  constructor() {
     let store = [];
 
     /**
@@ -100,8 +100,17 @@ export class Queue {
     this.tail = () =&gt; {
       return store[store.length];
     };
+
+    /**
+     * returns true if no items persists in store
+     * @return {boolean}
+     */
+    this.empty = () =&gt; {
+      return store.length === 0;
+    };
   }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 

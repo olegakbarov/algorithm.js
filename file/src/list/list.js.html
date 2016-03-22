@@ -60,6 +60,8 @@ export class List {
    * @return {List}
    */
   constructor(items) {
+    if (!Array.isArray(items)) throw Error(&apos;Provide a valid array&apos;);
+
     /**
      * @private store
      * @type {array}
