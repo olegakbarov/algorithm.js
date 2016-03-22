@@ -2,7 +2,7 @@
 import test from 'tape';
 import { Queue } from '../src/queue/queue.js';
 
-test('[queue] methods', assert => {
+test('[Queue] methods', assert => {
   let queue = new Queue();
   let msg = 'empty when created';
   assert.ok(queue.empty(), msg);
