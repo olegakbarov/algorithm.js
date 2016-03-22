@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/olegakbarov/cs-in-js.svg?branch=master)](https://travis-ci.org/olegakbarov/cs-in-js)
 [![Docs Status](http://olegakbarov.com/computer-science-in-javascript/badge.svg)](http://olegakbarov.com/cs-in-js/source.html)
+[![Coverage Status](https://coveralls.io/repos/github/olegakbarov/computer-science-in-javascript/badge.svg?branch=master)](https://coveralls.io/github/olegakbarov/computer-science-in-javascript?branch=master)
 
 This repo is attempt to refresh my knowledge of CS basics by reimplementing basic algorithms and data scructures. I'll try to keep test and doc coverage above 90%, but you're always welcome to help me.
 

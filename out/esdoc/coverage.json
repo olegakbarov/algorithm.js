@@ -1,8 +1,15 @@
 {
-  "coverage": "97.77%",
-  "expectCount": 45,
-  "actualCount": 44,
+  "coverage": "96.15%",
+  "expectCount": 52,
+  "actualCount": 50,
   "files": {
+    "src/list/linked-list.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        26
+      ]
+    },
     "src/list/list.js": {
       "expectCount": 13,
       "actualCount": 13,

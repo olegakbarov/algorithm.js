@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "cs-in-js/src/list/linked-list.js~linkedlist",
+    "class/src/list/linked-list.js~LinkedList.html",
+    "<span>LinkedList</span> <span class=\"search-result-import-path\">cs-in-js/src/list/linked-list.js</span>",
+    "class"
+  ],
+  [
     "cs-in-js/src/list/list.js~list",
     "class/src/list/list.js~List.html",
     "<span>List</span> <span class=\"search-result-import-path\">cs-in-js/src/list/list.js</span>",
@@ -414,6 +420,48 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/list/linked-list.js",
+    "file/src/list/linked-list.js.html",
+    "src/list/linked-list.js",
+    "file"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#constructor",
+    "class/src/list/linked-list.js~LinkedList.html#instance-constructor-constructor",
+    "src/list/linked-list.js~LinkedList#constructor",
+    "method"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#find",
+    "class/src/list/linked-list.js~LinkedList.html#instance-method-find",
+    "src/list/linked-list.js~LinkedList#find",
+    "method"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#findprevious",
+    "class/src/list/linked-list.js~LinkedList.html#instance-method-findPrevious",
+    "src/list/linked-list.js~LinkedList#findPrevious",
+    "method"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#head",
+    "class/src/list/linked-list.js~LinkedList.html#instance-member-head",
+    "src/list/linked-list.js~LinkedList#head",
+    "member"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#insert",
+    "class/src/list/linked-list.js~LinkedList.html#instance-method-insert",
+    "src/list/linked-list.js~LinkedList#insert",
+    "method"
+  ],
+  [
+    "src/list/linked-list.js~linkedlist#remove",
+    "class/src/list/linked-list.js~LinkedList.html#instance-method-remove",
+    "src/list/linked-list.js~LinkedList#remove",
+    "method"
+  ],
+  [
     "src/list/list.js",
     "file/src/list/list.js.html",
     "src/list/list.js",
@@ -559,13 +607,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-set-current",
+    "class/src/seq.js~Seq.html#instance-get-current",
     "src/seq.js~Seq#current",
     "member"
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-get-current",
+    "class/src/seq.js~Seq.html#instance-set-current",
     "src/seq.js~Seq#current",
     "member"
   ],
