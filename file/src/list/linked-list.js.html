@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/stack/stack.js | API Document</title>
+  <title data-ice="title">src/list/linked-list.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -49,68 +49,95 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/stack/stack.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/list/linked-list.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Stack, aka &quot;last-in, first-out (LIFO) data structure&quot;
+ * Instances of it used by LinkedList
  */
-export class Stack {
+class Node {
   /**
-   * creates empty stack instance
-   * @return {stack}
+   * return instance of Node
+   * @param  {any} el
+   * @return {node}
+   */
+  constructor(el) {
+    this.el = el;
+    this.next = null;
+  }
+}
+
+/**
+ * Linked list is efficient data structure that doesn&apos;t reply
+ * on array under the hood
+ */
+export class LinkedList {
+  /**
+   * Linked list instance
+   * @return {object} objext with &apos;head&apos; property
    */
   constructor() {
-    /**
-     * private storage of the stack re
-     * @type {Array}
-     */
-    let store = [];
+    this.head = new Node(&apos;head&apos;);
 
-    /**
-     * add item on top of stack
-     * @param  {any} el
-     * @return {void}
-     */
-    this.add = el =&gt; {
-      store.push(el);
-    };
-
-    /**
-     * return top item of the stack
-     * @return {any}
-     */
-    this.next = () =&gt; {
-      if (store.length &gt; 0) {
-        return store.pop();
-      } else {
-        return false;
-      }
-    };
-
-    /**
-     * peek returns last item without removing it
-     * @return {any}
-     */
-    this.peek = () =&gt; {
-      return store[store.length - 1];
-    };
-
-    /**
-     * size of stack
-     * @return {number}
-     */
-    this.size = () =&gt; {
-      return store.length;
-    };
-
-    /**
-     * serialize stack to string
-     * @return {string}
-     */
-    this.toString = () =&gt; {
-      return store.toString();
-    };
+    this.find = this.find.bind(this);
   }
-}</code></pre>
+
+  /**
+   * find node in linked list
+   * @param  {objext} node - objext to find
+   * @return {node|null}
+   */
+  find(node) {
+    let currentNode = this.head;
+
+    while (currentNode !== node) {
+      currentNode = currentNode.next;
+    }
+
+    return currentNode;
+  }
+
+  /**
+   * find node before
+   * @param  {node} node - a node to find one before
+   * @return {node|null}
+   */
+  findPrevious(node) {
+    let currentNode = this.head;
+
+    while (!(currentNode !== null) &amp;&amp; currentNode.next.element !== node) {
+      currentNode = currentNode.next;
+    }
+
+    return currentNode;
+  }
+
+  /**
+   * Insert element before node
+   * @param  {any} el - element to insert
+   * @param  {node} node - a node to insert after
+   * @return {void}
+   */
+  insert(el, node) {
+    let newNode = new Node(el);
+    let currentNode = this.find(node);
+
+    newNode.next = currentNode.next;
+    currentNode.next = newNode;
+  }
+
+  /**
+   * remove node
+   * @param  {node} node
+   * @return {noid}
+   */
+  remove(node) {
+    let prev = this.findPrevious(node);
+    if (!(prev.next !== null)) {
+      prev.next = node.next.next;
+    }
+  }
+}
+
+</code></pre>
 
 </div>
 
