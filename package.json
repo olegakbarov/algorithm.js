@@ -1,5 +1,5 @@
 {
-  "name": "cs-in-js",
+  "name": "computer-science-in-javascript",
   "version": "0.0.1",
   "description": "Data structures and algorithms in JS",
   "main": "index.js",
@@ -36,7 +36,7 @@
   "author": "Oleg Akbarov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/olegakbarov/cs-in-js/issues"
+    "url": "https://github.com/olegakbarov/computer-science-in-javascript/issues"
   },
-  "homepage": "https://github.com/olegakbarov/cs-in-js#readme"
+  "homepage": "https://github.com/olegakbarov/computer-science-in-javascript#readme"
 }

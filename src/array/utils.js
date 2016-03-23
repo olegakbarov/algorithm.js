@@ -3,6 +3,7 @@
 /**
  * In-place shuffles the array using Fisher–Yates algorithm
  * https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+ * Time complexity: O(N).
  * @param  {array} arr — accepts array of numbers
  * @return {array]}
  */

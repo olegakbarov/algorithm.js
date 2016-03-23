@@ -16,6 +16,12 @@ Here's the things i'd like to bring up (plans may change though 😁)
 - [ ] Bubble sort
 - [ ] Quicksort
 - [ ] Binary search
+- [ ] KMP search
+- [ ] Recursive binary search
+- [ ] Longest increasing subsequence
+- [ ] Maximum subarray
+- [ ] Maximum subarray divide and conquer
+- [ ] Quickselect
 
 #### Data Structures
 
@@ -27,6 +33,17 @@ Here's the things i'd like to bring up (plans may change though 😁)
 - [ ] Set
 - [ ] Map
 - [ ] Graph
+- [ ] AVL Tree
+- [ ] Binary search tree
+- [ ] Edge
+- [ ] Hashtable
+- [ ] Heap
+- [ ] Interval tree
+- [ ] Red-Black tree
+- [ ] Size-balanced tree
+- [ ] Suffix tree
+- [ ] Vertex
+- [ ] Trie
 
 #### Functional stuff
 
