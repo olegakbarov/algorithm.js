@@ -1,80 +1,92 @@
 window.esdocSearchIndex = [
   [
-    "cs-in-js/src/list/linked-list.js~linkedlist",
+    "computer-science-in-javascript/src/bst/bst.js~bst",
+    "class/src/bst/bst.js~BST.html",
+    "<span>BST</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/bst/bst.js</span>",
+    "class"
+  ],
+  [
+    "computer-science-in-javascript/src/list/linked-list.js~linkedlist",
     "class/src/list/linked-list.js~LinkedList.html",
-    "<span>LinkedList</span> <span class=\"search-result-import-path\">cs-in-js/src/list/linked-list.js</span>",
+    "<span>LinkedList</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/list/linked-list.js</span>",
     "class"
   ],
   [
-    "cs-in-js/src/list/list.js~list",
+    "computer-science-in-javascript/src/list/list.js~list",
     "class/src/list/list.js~List.html",
-    "<span>List</span> <span class=\"search-result-import-path\">cs-in-js/src/list/list.js</span>",
+    "<span>List</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/list/list.js</span>",
     "class"
   ],
   [
-    "cs-in-js/src/queue/queue.js~queue",
+    "computer-science-in-javascript/src/queue/queue.js~queue",
     "class/src/queue/queue.js~Queue.html",
-    "<span>Queue</span> <span class=\"search-result-import-path\">cs-in-js/src/queue/queue.js</span>",
+    "<span>Queue</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/queue/queue.js</span>",
     "class"
   ],
   [
-    "cs-in-js/src/seq.js~seq",
+    "computer-science-in-javascript/src/seq.js~seq",
     "class/src/seq.js~Seq.html",
-    "<span>Seq</span> <span class=\"search-result-import-path\">cs-in-js/src/seq.js</span>",
+    "<span>Seq</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/seq.js</span>",
     "class"
   ],
   [
-    "cs-in-js/src/stack/stack.js~stack",
+    "computer-science-in-javascript/src/stack/stack.js~stack",
     "class/src/stack/stack.js~Stack.html",
-    "<span>Stack</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/stack.js</span>",
+    "<span>Stack</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/stack/stack.js</span>",
     "class"
   ],
   [
-    "cs-in-js/src/obj-utils.js~cloneobject",
+    "computer-science-in-javascript/src/obj-utils.js~cloneobject",
     "function/index.html#static-function-cloneObject",
-    "<span>cloneObject</span> <span class=\"search-result-import-path\">cs-in-js/src/obj-utils.js</span>",
+    "<span>cloneObject</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/obj-utils.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/array/utils.js~creatematrix",
+    "computer-science-in-javascript/src/array/utils.js~creatematrix",
     "function/index.html#static-function-createMatrix",
-    "<span>createMatrix</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
+    "<span>createMatrix</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/utils.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/stack/examples.js~factorial",
+    "computer-science-in-javascript/src/stack/examples.js~factorial",
     "function/index.html#static-function-factorial",
-    "<span>factorial</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
+    "<span>factorial</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/stack/examples.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/array/mergesort.js~merge",
+    "computer-science-in-javascript/src/array/mergesort.js~merge",
     "function/index.html#static-function-merge",
-    "<span>merge</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
+    "<span>merge</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/mergeSort.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/array/mergesort.js~mergesort",
+    "computer-science-in-javascript/src/array/mergesort.js~mergesort",
     "function/index.html#static-function-mergeSort",
-    "<span>mergeSort</span> <span class=\"search-result-import-path\">cs-in-js/src/array/mergeSort.js</span>",
+    "<span>mergeSort</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/mergeSort.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/stack/examples.js~parensvalidator",
+    "computer-science-in-javascript/src/stack/examples.js~parensvalidator",
     "function/index.html#static-function-parensValidator",
-    "<span>parensValidator</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
+    "<span>parensValidator</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/stack/examples.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/array/utils.js~shuffle",
+    "computer-science-in-javascript/src/array/utils.js~shuffle",
     "function/index.html#static-function-shuffle",
-    "<span>shuffle</span> <span class=\"search-result-import-path\">cs-in-js/src/array/utils.js</span>",
+    "<span>shuffle</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/utils.js</span>",
     "function"
   ],
   [
-    "cs-in-js/src/stack/examples.js~tobase",
+    "computer-science-in-javascript/src/queue/towerofhanoi.js~solvepuzzle",
+    "function/index.html#static-function-solvePuzzle",
+    "<span>solvePuzzle</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/queue/towerOfHanoi.js</span>",
+    "function"
+  ],
+  [
+    "computer-science-in-javascript/src/stack/examples.js~tobase",
     "function/index.html#static-function-toBase",
-    "<span>toBase</span> <span class=\"search-result-import-path\">cs-in-js/src/stack/examples.js</span>",
+    "<span>toBase</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/stack/examples.js</span>",
     "function"
   ],
   [
@@ -408,6 +420,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/array/bubblesort.js",
+    "file/src/array/bubbleSort.js.html",
+    "src/array/bubbleSort.js",
+    "file"
+  ],
+  [
     "src/array/mergesort.js",
     "file/src/array/mergeSort.js.html",
     "src/array/mergeSort.js",
@@ -417,6 +435,36 @@ window.esdocSearchIndex = [
     "src/array/utils.js",
     "file/src/array/utils.js.html",
     "src/array/utils.js",
+    "file"
+  ],
+  [
+    "src/bst/bst.js",
+    "file/src/bst/bst.js.html",
+    "src/bst/bst.js",
+    "file"
+  ],
+  [
+    "src/bst/bst.js~bst#constructor",
+    "class/src/bst/bst.js~BST.html#instance-constructor-constructor",
+    "src/bst/bst.js~BST#constructor",
+    "method"
+  ],
+  [
+    "src/bst/bst.js~bst#insert",
+    "class/src/bst/bst.js~BST.html#instance-member-insert",
+    "src/bst/bst.js~BST#insert",
+    "member"
+  ],
+  [
+    "src/bst/bst.js~bst#root",
+    "class/src/bst/bst.js~BST.html#instance-member-root",
+    "src/bst/bst.js~BST#root",
+    "member"
+  ],
+  [
+    "src/functional/memo.js",
+    "file/src/functional/memo.js.html",
+    "src/functional/memo.js",
     "file"
   ],
   [
@@ -594,6 +642,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/queue/towerofhanoi.js",
+    "file/src/queue/towerOfHanoi.js.html",
+    "src/queue/towerOfHanoi.js",
+    "file"
+  ],
+  [
     "src/seq.js",
     "file/src/seq.js.html",
     "src/seq.js",
@@ -607,13 +661,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-get-current",
+    "class/src/seq.js~Seq.html#instance-set-current",
     "src/seq.js~Seq#current",
     "member"
   ],
   [
     "src/seq.js~seq#current",
-    "class/src/seq.js~Seq.html#instance-set-current",
+    "class/src/seq.js~Seq.html#instance-get-current",
     "src/seq.js~Seq#current",
     "member"
   ],

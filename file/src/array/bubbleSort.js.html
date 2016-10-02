@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/stack/stack.js | API Document</title>
+  <title data-ice="title">src/array/bubbleSort.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -51,68 +51,48 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/stack/stack.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Stack, aka &quot;last-in, first-out (LIFO) data structure&quot;
+<div class="content" data-ice="content"><h1 data-ice="title">src/array/bubbleSort.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* eslint-disable max-depth */
+/* eslint-disable no-unused-vars */
+&apos;use strict&apos;;
+
+/**
+ * Utility function that swaps two items in array
+ * @param  {Array} arr
+ * @param  {Integer} a
+ * @param  {Integer} b
+ * @return {Array}
  */
-export class Stack {
-  /**
-   * creates empty stack instance
-   * @return {stack}
-   */
-  constructor() {
-    /**
-     * private storage of the stack re
-     * @type {Array}
-     */
-    let store = [];
+function swap(arr, a, b) {
+  let tmp = arr[a];
+  arr[a]= arr[b];
+  arr[b] = tmp;
 
-    /**
-     * add item on top of stack
-     * @param  {any} el
-     * @return {void}
-     */
-    this.add = el =&gt; {
-      store.push(el);
-    };
+  return arr;
+}
 
-    /**
-     * return top item of the stack
-     * @return {any}
-     */
-    this.next = () =&gt; {
-      if (store.length &gt; 0) {
-        return store.pop();
-      } else {
-        return false;
+/**
+ * Naive bubbleSort
+ * @param  {Array} arr
+ * @return {Array}
+ */
+function bubbleSort(arr) {
+  let isSorted = false;
+
+  while (!isSorted) {
+    isSorted = true;
+
+    for (let i = 0; i &lt; arr.length - 1; i++) {
+      if (arr[i] &gt; arr[i + 1]) {
+        swap(arr, i, i + 1);
+        isSorted = false;
       }
-    };
-
-    /**
-     * peek returns last item without removing it
-     * @return {any}
-     */
-    this.peek = () =&gt; {
-      return store[store.length - 1];
-    };
-
-    /**
-     * size of stack
-     * @return {number}
-     */
-    this.size = () =&gt; {
-      return store.length;
-    };
-
-    /**
-     * serialize stack to string
-     * @return {string}
-     */
-    this.toString = () =&gt; {
-      return store.toString();
-    };
+    }
   }
-}</code></pre>
+
+  return arr;
+}
+</code></pre>
 
 </div>
 

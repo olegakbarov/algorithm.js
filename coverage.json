@@ -1,8 +1,18 @@
 {
-  "coverage": "96.15%",
-  "expectCount": 52,
+  "coverage": "87.71%",
+  "expectCount": 57,
   "actualCount": 50,
   "files": {
+    "src/bst/bst.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        18,
+        19,
+        22,
+        20
+      ]
+    },
     "src/list/linked-list.js": {
       "expectCount": 7,
       "actualCount": 6,
@@ -51,6 +61,13 @@
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
+    },
+    "src/queue/towerOfHanoi.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
     }
   }
 }

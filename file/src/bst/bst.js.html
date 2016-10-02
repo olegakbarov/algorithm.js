@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/stack/stack.js | API Document</title>
+  <title data-ice="title">src/bst/bst.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -51,65 +51,34 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/stack/stack.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Stack, aka &quot;last-in, first-out (LIFO) data structure&quot;
+<div class="content" data-ice="content"><h1 data-ice="title">src/bst/bst.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/*
+ * Node of BST
  */
-export class Stack {
-  /**
-   * creates empty stack instance
-   * @return {stack}
-   */
+class Node {
+  constructor(val, left, right) {
+    this.value = val;
+
+    if (!left &amp;&amp; !right) {
+      this.left = null;
+      this.right = null;
+    } else {
+      this.left = left;
+      this.right = right;
+    }
+  }
+}
+
+export class BST {
   constructor() {
-    /**
-     * private storage of the stack re
-     * @type {Array}
-     */
-    let store = [];
+    this.root = null;
 
-    /**
-     * add item on top of stack
-     * @param  {any} el
-     * @return {void}
-     */
-    this.add = el =&gt; {
-      store.push(el);
-    };
-
-    /**
-     * return top item of the stack
-     * @return {any}
-     */
-    this.next = () =&gt; {
-      if (store.length &gt; 0) {
-        return store.pop();
+    this.insert = val =&gt; {
+      if (this.root === null) {
+        this.root = new Node(val);
       } else {
-        return false;
+
       }
-    };
-
-    /**
-     * peek returns last item without removing it
-     * @return {any}
-     */
-    this.peek = () =&gt; {
-      return store[store.length - 1];
-    };
-
-    /**
-     * size of stack
-     * @return {number}
-     */
-    this.size = () =&gt; {
-      return store.length;
-    };
-
-    /**
-     * serialize stack to string
-     * @return {string}
-     */
-    this.toString = () =&gt; {
-      return store.toString();
     };
   }
 }</code></pre>
