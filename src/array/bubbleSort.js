@@ -9,7 +9,7 @@
  * @param  {Integer} b
  * @return {Array}
  */
-function swap(arr, a, b) {
+export function swap(arr, a, b) {
   let tmp = arr[a];
   arr[a]= arr[b];
   arr[b] = tmp;
@@ -22,7 +22,7 @@ function swap(arr, a, b) {
  * @param  {Array} arr
  * @return {Array}
  */
-function bubbleSort(arr) {
+export function bubbleSort(arr) {
   let isSorted = false;
 
   while (!isSorted) {
