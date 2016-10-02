@@ -13,7 +13,7 @@ Here's the things i'd like to bring up (plans may change though 😁)
 #### Algorithms
 
 - [x] Merge sort
-- [ ] Bubble sort
+- [x] Bubble sort
 - [ ] Quicksort
 - [ ] Binary search
 - [ ] KMP search
@@ -49,7 +49,7 @@ Here's the things i'd like to bring up (plans may change though 😁)
 
 - [ ] Curry
 - [ ] Compose
-- [ ] Memoize
+- [x] Memoize
 - [ ] Pick
 - [ ] Pluck
 - [ ] Partition
