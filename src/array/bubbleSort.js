@@ -1,6 +1,14 @@
 /* eslint-disable max-depth */
+/* eslint-disable no-unused-vars */
 'use strict';
 
+/**
+ * Utility function that swaps two items in array
+ * @param  {Array} arr
+ * @param  {Integer} a
+ * @param  {Integer} b
+ * @return {Array}
+ */
 function swap(arr, a, b) {
   let tmp = arr[a];
   arr[a]= arr[b];
@@ -9,6 +17,11 @@ function swap(arr, a, b) {
   return arr;
 }
 
+/**
+ * Naive bubbleSort
+ * @param  {Array} arr
+ * @return {Array}
+ */
 function bubbleSort(arr) {
   let isSorted = false;
 
@@ -25,7 +38,3 @@ function bubbleSort(arr) {
 
   return arr;
 }
-
-let arr = [4, 5, 2, 9, 7, 5, 8];
-
-bubbleSort(arr);
