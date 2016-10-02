@@ -36,6 +36,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "computer-science-in-javascript/src/array/bubblesort.js~bubblesort",
+    "function/index.html#static-function-bubbleSort",
+    "<span>bubbleSort</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/bubbleSort.js</span>",
+    "function"
+  ],
+  [
     "computer-science-in-javascript/src/obj-utils.js~cloneobject",
     "function/index.html#static-function-cloneObject",
     "<span>cloneObject</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/obj-utils.js</span>",
@@ -81,6 +87,12 @@ window.esdocSearchIndex = [
     "computer-science-in-javascript/src/queue/towerofhanoi.js~solvepuzzle",
     "function/index.html#static-function-solvePuzzle",
     "<span>solvePuzzle</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/queue/towerOfHanoi.js</span>",
+    "function"
+  ],
+  [
+    "computer-science-in-javascript/src/array/bubblesort.js~swap",
+    "function/index.html#static-function-swap",
+    "<span>swap</span> <span class=\"search-result-import-path\">computer-science-in-javascript/src/array/bubbleSort.js</span>",
     "function"
   ],
   [

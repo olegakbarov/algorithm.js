@@ -1,7 +1,7 @@
 {
-  "coverage": "87.71%",
-  "expectCount": 57,
-  "actualCount": 50,
+  "coverage": "88.13%",
+  "expectCount": 59,
+  "actualCount": 52,
   "files": {
     "src/bst/bst.js": {
       "expectCount": 4,
@@ -40,6 +40,11 @@
     "src/stack/stack.js": {
       "expectCount": 7,
       "actualCount": 7,
+      "undocumentLines": []
+    },
+    "src/array/bubbleSort.js": {
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "src/obj-utils.js": {

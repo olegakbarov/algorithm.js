@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 3,
-    "content": "/* eslint-disable max-depth */\n/* eslint-disable no-unused-vars */\n'use strict';\n\n/**\n * Utility function that swaps two items in array\n * @param  {Array} arr\n * @param  {Integer} a\n * @param  {Integer} b\n * @return {Array}\n */\nfunction swap(arr, a, b) {\n  let tmp = arr[a];\n  arr[a]= arr[b];\n  arr[b] = tmp;\n\n  return arr;\n}\n\n/**\n * Naive bubbleSort\n * @param  {Array} arr\n * @return {Array}\n */\nfunction bubbleSort(arr) {\n  let isSorted = false;\n\n  while (!isSorted) {\n    isSorted = true;\n\n    for (let i = 0; i < arr.length - 1; i++) {\n      if (arr[i] > arr[i + 1]) {\n        swap(arr, i, i + 1);\n        isSorted = false;\n      }\n    }\n  }\n\n  return arr;\n}\n"
+    "content": "/* eslint-disable max-depth */\n/* eslint-disable no-unused-vars */\n'use strict';\n\n/**\n * Utility function that swaps two items in array\n * @param  {Array} arr\n * @param  {Integer} a\n * @param  {Integer} b\n * @return {Array}\n */\nexport function swap(arr, a, b) {\n  let tmp = arr[a];\n  arr[a]= arr[b];\n  arr[b] = tmp;\n\n  return arr;\n}\n\n/**\n * Naive bubbleSort\n * @param  {Array} arr\n * @return {Array}\n */\nexport function bubbleSort(arr) {\n  let isSorted = false;\n\n  while (!isSorted) {\n    isSorted = true;\n\n    for (let i = 0; i < arr.length - 1; i++) {\n      if (arr[i] > arr[i + 1]) {\n        swap(arr, i, i + 1);\n        isSorted = false;\n      }\n    }\n  }\n\n  return arr;\n}\n"
   },
   {
     "__docId__": 1,
@@ -21,9 +21,9 @@
     "memberof": "src/array/bubbleSort.js",
     "longname": "src/array/bubbleSort.js~swap",
     "access": null,
-    "export": false,
+    "export": true,
     "importPath": "computer-science-in-javascript/src/array/bubbleSort.js",
-    "importStyle": null,
+    "importStyle": "{swap}",
     "description": "Utility function that swaps two items in array",
     "lineNumber": 12,
     "params": [
@@ -77,9 +77,9 @@
     "memberof": "src/array/bubbleSort.js",
     "longname": "src/array/bubbleSort.js~bubbleSort",
     "access": null,
-    "export": false,
+    "export": true,
     "importPath": "computer-science-in-javascript/src/array/bubbleSort.js",
-    "importStyle": null,
+    "importStyle": "{bubbleSort}",
     "description": "Naive bubbleSort",
     "lineNumber": 25,
     "params": [
