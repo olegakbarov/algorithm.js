@@ -1,6 +1,6 @@
 # Computer Science in JavaScript
 
-[![Build Status](https://travis-ci.org/olegakbarov/cs-in-js.svg?branch=master)](https://travis-ci.org/olegakbarov/cs-in-js)
+<!-- [![Build Status](https://travis-ci.org/olegakbarov/cs-in-js.svg?branch=master)](https://travis-ci.org/olegakbarov/cs-in-js) -->
 [![Docs Status](http://olegakbarov.com/computer-science-in-javascript/badge.svg)](http://olegakbarov.com/cs-in-js/source.html)
 [![Coverage Status](https://coveralls.io/repos/github/olegakbarov/computer-science-in-javascript/badge.svg?branch=master)](https://coveralls.io/github/olegakbarov/computer-science-in-javascript?branch=master)
 
@@ -15,7 +15,7 @@ Here's the things i'd like to bring up (plans may change though 😁)
 - [x] Merge sort
 - [x] Bubble sort
 - [ ] Quicksort
-- [ ] Binary search
+- [x] Binary search
 - [ ] KMP search
 - [ ] Recursive binary search
 - [ ] Longest increasing subsequence
