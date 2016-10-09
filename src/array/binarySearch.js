@@ -8,7 +8,6 @@
  * @return {Integer}
  */
 export function binarySearch(arr, matchCriteria) {
-// function binarySearch(arr, matchCriteria) {
   let left = 0;
   let right = arr.length - 1;
 
